@@ -1,0 +1,104 @@
+@keyframes tabbarShow{
+  from {
+      max-height: 0;
+  }
+  to {
+    max-height: 100vh;
+  }
+}
+@keyframes tabbarHide{
+  from {
+      max-height: 100vh;
+  }
+  to {
+    max-height: 0;
+  }
+}
+.services__whyChooseUs {
+  position: relative;
+  padding-top: 8.5rem;
+  padding-bottom: 8.5rem;
+  background-image: url('/assets/images/services/why-choose-us.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  &:before {
+    content: '';
+    background-color: rgba(255, 255, 255, 0.7);
+    @include positionControl(absolute, 0, 0, 0, 0);
+  }
+  & .container {
+    & .services__whyChooseUs-content {
+      & .content__tabbar {
+        & ul {
+          & li {
+            margin-top: 10px;
+            & .content__tabbar-buttonBlock {
+              position: relative;
+              display: flex;
+              align-items: center;
+              color: $white;
+              font-size: 13px;
+              &:hover {
+                cursor: pointer;
+              }
+              & .content__tabbar-leftIcon {
+                position: absolute;
+                left: 0;
+                padding-left: 10px;
+              }
+              & .content__tabbar-button {
+                background-color: #504645;
+                border: none;
+                outline: none;
+                width: 100%;
+                color: $white;
+                font-size: 13px;
+                font-weight: 500;
+                text-transform: uppercase;
+                padding: 10px 5px 10px 3rem;
+                display: flex;
+                justify-content: space-between;
+                &:hover {
+                  cursor: pointer;
+                }
+                &.active {
+                  background-color: $secondary;
+                }
+                & .button__icon {
+                  font-size: 17px;
+                }
+              }
+            }
+            
+            & .content__tabbar-content {
+              background-color: #f8f8f8;
+              border: 1px solid #dfdfdf;
+              border-top: none;
+              & p {
+                font-size: 14px;
+                line-height: 23px;
+                color: #5c5c5c;
+                padding: 15px;
+              }
+              &.tabbar__collapse {
+                max-width: 100vw;
+                overflow: hidden;
+                -webkit-transition: 1s ease;
+                transition:  1s ease;
+                max-height: 0;
+                opacity: 0;
+                &.show {
+                    max-width: 100vw;
+                    max-height: 100vh;
+                    opacity: 1;
+                    -webkit-transition: 1s ease;
+                    transition:  1s ease-in-out;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

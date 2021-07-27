@@ -1,0 +1,198 @@
+
+mixin _renderImageBlock(data)
+    //- data 
+            class: class bao boc khoi co chua hinh anh --> the a
+            href: href cua the a
+            target:  target cua the a
+            id: id cua the a
+            iconImage: {} -> dinh nghia cho  component iconImage
+            content: {} -> dinh nghia cho  component content
+    if data
+        a( class=`${data.class  ? data.class: ''}` 
+            href=data.href
+            target=data.target 
+            id=data.id)
+            if data.iconImage 
+                +renderIconImage(data.iconImage)
+            if data.content 
+                +renderContent(data.content)
+
+mixin _renderDescBlock(data)
+    //- data attribute
+            class: class bao boc khoi co chua noi dung
+            id: id
+            text: {} -> dinh nghia cho  component text
+            content: {} -> dinh nghia cho  component content
+    div(class=`${data.class ? data.class: ''}` id=data.id)
+        if data.text 
+            +renderText(data.text)
+        if data.content 
+            +renderContent(data.content)
+
+mixin renderCard(data) 
+    //- data attribute
+            class: class bao boc khoi bao boc cua card
+            isVertical: true/false --> sap xep theo chieu doc hay ngang
+            cardImageBlock: {} --> dinh nghia cho  hoi chua hinh anh
+            cardDescBlock: {} --> dinh nghia cho  hoi chua noi dung
+        
+    div(class=`d-flex flex-wrap ${data.isVertical ? '': 'flex-column'} ${data.class ? data.class : ''}`)
+        if data.cardImageBlock
+            +_renderImageBlock(data.cardImageBlock)
+        if data.cardDescBlock
+            +_renderDescBlock(data.cardDescBlock)
+
+
+mixin renderCardType1(data)
+    .card.type1(class= data.bgColor)
+        .card__content.w-100.d-flex.justify-content-center.align-items-center.flex-column.text-center 
+            i.card__content-icon(class= data.iconClass)
+            h4.card__content-title= data.title
+            p.card__content-desc= data.desc
+
+mixin renderCardType2(data)
+    a.card.type2(class=`${data.active ? 'active' : ''}` href= data.href)
+        .card__content.w-100.d-flex.justify-content-center.align-items-center.flex-column.text-center 
+            i.card__content-icon(class= data.iconClass)
+            h4.card__content-title= data.title
+            p.card__content-desc= data.desc
+
+mixin renderCardType3(data)
+    .card.type3 
+        .card__content.w-100.d-flex.justify-content-center.align-items-center.flex-column.text-center 
+            i.card__content-icon(class= data.iconClass)
+            h4.card__content-title= data.title
+            p.card__content-desc= data.desc
+
+mixin renderCardType4(data)
+    .card.type4 
+        .card__content.w-100.d-flex.justify-content-center.align-items-center.flex-column.text-center 
+            i.card__content-icon(class= data.iconClass)
+            h4.card__content-title= data.title
+
+mixin renderCardType5(data)
+    .card.type5 
+        .card__content.w-100.d-flex.justify-content-center 
+            i.card__content-icon(class= data.iconClass)
+            i.card__content-subIcon(class= data.iconClass)
+            .card__content-details
+                h4.details__title= `${data.title} ` 
+                    span= data.subTitle 
+                p.details__desc= data.desc
+
+mixin renderCardType6(data)
+    .card.type6 
+        .card__content.w-100.d-flex.justify-content-center.align-items-center.flex-column.text-center 
+            .card__content-icon.rounded-circle(class=`${data.line ? 'line' : ''}`)
+                i(class= data.iconClass)
+            h4.card__content-title= data.title
+            p.card__content-desc= data.desc
+
+mixin renderCardType7(data)
+    a(href=`${data.href}`) 
+        .card.type7.radius-15
+            .card__image.w-100.overflow-hidden.position-relative
+                img.card__image-src.w-100(src= data.src)
+                +renderButton(data)
+                    
+            .card__content 
+                p.card__content-trending 
+                    img(src="assets/images/home/trending.png", alt="")
+                    span.trending__text.ml-3=data.textTrending
+                p.card__content-price.mt-3.mb-3  
+                    span.price__base=data.basePrice 
+                    del.price__sale=data.salePrice
+                p.card__content-review 
+                    img(src="assets/images/home/star.png", alt="")
+                    img(src="assets/images/home/star.png", alt="")
+                    img(src="assets/images/home/star.png", alt="")
+                    img(src="assets/images/home/star.png", alt="")
+                    img(src="assets/images/home/star-mis.png", alt="")
+                    span.review__count (11)
+                h4.card__content-name.mb-3.mt-3=data.title 
+                p.card__content-desc=data.desc
+                p.card__content-line=data.line
+
+mixin renderCardType8(data)
+    .card.type8.d-flex.flex-column.align-items-center 
+        .card__image.overflow-hidden
+            img.card__image-src.rounded-circle(src= data.src)
+        .card__content.w-100.d-flex.justify-content-center.align-items-center.flex-column.text-center
+            p.card__content-desc= data.desc
+            h4.card__content-name= data.name
+            h5.card__content-position= data.position
+mixin renderCardType9(data)
+    .card.type9.d-flex.flex-column.align-items-center 
+        .card__image.overflow-hidden
+            img.card__image-src.rounded-circle(src= data.src)
+        .card__content.w-100.d-flex.justify-content-center.align-items-center.flex-column.text-center
+            span.card__content-desc 
+               a(href="#",class="desc__text")=data.text
+mixin renderCardType10(data)
+    a(href=`${data.href}`)  
+        .card.type10
+            .card__image
+                img.card__image-src.rounded-radius.w-100(src= data.src)
+            .card__overlay
+                p.card__overlay-sale=data.sale 
+                p.card__overlay-per.mt-3.mb-3=data.per 
+                p.card__overlay-name= data.name
+mixin renderCardNewVideo(data)
+    .card.news-video 
+        .card__video
+            <iframe width="100%" src="https://www.youtube.com/embed/DH6d8-fTsww" allowfullscreen=""></iframe>
+        .card__content
+            a(href=`${data.href}`, style="color:white")
+                p.card__content-date= data.date
+                h4.card__content-name.mb-4= data.name    
+                p.card__content-month= data.month
+mixin renderCardNews(data)
+    a(href=`${data.href}`)  
+        .card.news.text-center(class=`${data.custom}`)
+            if data.image
+                .card__image
+                    img(src="assets/images/home/news.png",  alt="")
+            .card__content(class=`${data.class}`)
+                h4.card__content-name.position-relative= data.name      
+                p.card__content-month= data.month
+                if data.image
+                   p.card__content-desc= data.desc
+mixin renderCardCoupon(data)
+    if data.coupon
+        .card.coupon
+            .card__avatar.d-flex.align-items-center
+                .card__avatar-image
+                    img(src="assets/images/home/coupon-avatar.png", alt="")
+                .card__avatar-box 
+                    h4.box__title=data.title
+                    p.box__site.mt-3=data.site
+            .card__sale 
+                +renderButton(data)
+            .card__content
+                h4.card__content-name= data.name      
+                p.card__content-month.d-flex.align-items-center 
+                  img(src="assets/images/svg/alarm.svg", alt="").mr-3 
+                  span= data.month 
+            .card__footer
+                +renderButton({
+                    href:'#',
+                    text: {text: 'GET DEAL'},
+                    class:'hvr-curl-top-right color-white custom-hover-button mt-5 w-100 d-block text-center background-blue',
+                })
+    else 
+        .card.discount.coupon.d-flex.mt-5.align-items-center
+            .card__avatar
+                .card__avatar-image
+                    img(src="assets/images/home/085fd8f7819dee3b716da73d3b2de61c@2x.png", alt="")
+                    p.amazon.text-center=data.amazon
+            .card__content
+               .card__content-box.text-center
+                    p=data.discount 
+                    p.mt-4.mb-4.color-blue.scale.font-weight-bold=data.per 
+                    a(href=`${data.href}`).color-blue=data.shop
+                
+mixin renderCardAlert(data)
+        .card.alert.bg-blue
+            p.alert__content.d-flex.justify-content-center.align-items-center 
+               img(src="assets/images/svg/dola.svg", alt="")
+               a.d-block.ml-3(href=`${data.href}`,style="color:white")=data.text

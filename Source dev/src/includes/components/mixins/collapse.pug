@@ -1,0 +1,7 @@
+mixin renderCollapse(data)
+    .accordion-container  
+        .set
+            a(href='#')=data.title
+            //- i.fa.fa-plus
+            .content
+                p=data.content

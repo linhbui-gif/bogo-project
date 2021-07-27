@@ -1,0 +1,22 @@
+mixin renderModal(data)
+    .modalWrap.fixed-full(id= `${data.id}`)
+        .clickToClose.position-absolute
+        each modalValue, modalIndex in data.modalList
+            .modal.position-absolute.d-flex.justify-content-between.align-items-center.flex-column.rounded-4
+                .modal__close.text-right.w-100.mb-4
+                    i.fas.fa-times.modal__close-icon
+                .modal__body
+                    +renderCard(modalValue)
+                .modal__btn.d-flex.flex-row.align-items-center.justify-content-center.mt-4
+                    .modal__btn-prev.fs-20
+                        if (modalIndex > 0)
+                            -let preText = data.prevBtn ? data.prevBtn : 'Previous';
+                            +renderButton( { text: { text: preText } })
+                    .modal__btn-next.ml-4
+                        -let closeText = data.closeBtn ? data.closeBtn : 'Close';
+                        -let nextText = data.nextBtn ? data.nextBtn : 'Next';
+                        +renderButton( { text: {text: `${modalIndex === (data.modalList.length - 1) ? closeText : nextText}` } })
+
+
+
+

@@ -1,0 +1,36 @@
+mixin renderItemList(data)
+    if data
+        if data.items
+            ul(class=`${data.class ? data.class: ''}` id=data.id)
+                each item in data.items
+                    li(class=`${item.class ? item.class: ''}` id=item.id) 
+                        if item.button
+                            +renderButton(item.button)
+                        if item.itemList
+                            +renderItemList(item.itemList)
+
+//- sample
+
+//- +renderItemList({
+//-         class:"d-flex flex-wrap w-25",
+//-         items:[
+//-             {class:"w-100", button: {  class: 'w-100 hover-bg-blue hover-text-white', href:'#', iconImage: {name: 'fa fa-user'}, text: {text: 'item2'}}},
+//-             {class:"w-100", button: {  class: 'w-100 hover-bg-blue hover-text-white', href:'#', iconImage: {name: 'fa fa-user'}, text: {text: 'item3'}}},
+//-             {class:"w-100", button: {  class: 'w-100 hover-bg-blue hover-text-white', href:'#', iconImage: {name: 'fa fa-user'}, text: {text: 'item4'}}},
+//-             {class:"w-100", button: {  class: 'w-100 hover-bg-blue hover-text-white', href:'#', iconImage: {name: 'fa fa-user'}, text: {text: 'item5'}}},
+//-             ]
+//-         })
+
+//- +renderItemList({
+//-         class:"d-flex flex-wrap w-25",
+//-         items:[{class:"w-100", itemList:{class:"d-flex flex-wrap w-25",
+//-         items:[{class:"w-100", button: {  class: 'w-100 hover-bg-blue hover-text-white', href:'#', text: {text: 'item1'}}},
+//-                {class:"w-100", button: {  class: 'w-100 hover-bg-blue hover-text-white', href:'#', text: {text: 'item2'}}},
+//-                ]}, button: {  class: 'w-100 hover-bg-blue hover-text-white', href:'#', iconImage: {name: 'fa fa-user'}, text: {text: 'item1'}}},
+//-                {class:"w-100", button: {  class: 'w-100 hover-bg-blue hover-text-white', href:'#', iconImage: {name: 'fa fa-user'}, text: {text: 'item2'}}},
+//-                {class:"w-100", button: {  class: 'w-100 hover-bg-blue hover-text-white', href:'#', iconImage: {name: 'fa fa-user'}, text: {text: 'item3'}}},
+//-                {class:"w-100", button: {  class: 'w-100 hover-bg-blue hover-text-white', href:'#', iconImage: {name: 'fa fa-user'}, text: {text: 'item4'}}},
+//-                {class:"w-100", button: {  class: 'w-100 hover-bg-blue hover-text-white', href:'#', iconImage: {name: 'fa fa-user'}, text: {text: 'item5'}}},
+//-              ]
+//-         })
+

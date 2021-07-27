@@ -1,0 +1,12 @@
+.whyChooseUs {
+  padding-block: 8.5rem;
+  background-color: $white;
+
+  &__wrapper {
+    &-content {
+      .content__item {
+        margin-bottom: 5rem;
+      }
+    }
+  }
+}

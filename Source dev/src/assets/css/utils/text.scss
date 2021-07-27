@@ -1,0 +1,43 @@
+// text-color
+@each $name, $color, $hover in $utils-color-mapping {
+  .#{$acr-text}-#{$name} {
+    color: $color;
+  }
+}
+// text align
+@each $width-num, $width-name in $minwidth-media {
+  @if ($width-num == "") {
+    @each $name in $utils-text-align-list {
+      .#{$acr-text}-#{$name} {
+        text-align: $name;
+      }
+    }
+  } @else {
+    @include min-breakpoint($width-num) {
+      @each $name in $utils-text-align-list {
+        .#{$acr-text}#{$width-name}-#{$name} {
+          text-align: $name;
+        }
+      }
+    }
+  }
+}
+// font weight
+@each $name in $utils-text-weight-list {
+  .#{$acr-text-weight}-#{$name} {
+    font-weight: $name;
+  }
+}
+// font size
+@each $name, $value in $utils-font-size-list {
+  .#{$acr-font-size}-#{$name} {
+    font-size: $value;
+  }
+}
+
+// line height
+@each $name, $value in $utils-line-height-list {
+  .#{$acr-line-height}-#{$name} {
+    line-height: $value;
+  }
+}

@@ -1,0 +1,142 @@
+
+
+.itemList {
+    &.type1 {
+        & .owl-dots {
+            text-align: center;
+            & .owl-dot {
+                & span {
+                    width: 10px;
+                    height: 10px;
+                    margin: 5px 7px;
+                    background: #D6D6D6;
+                    display: block;
+                    transition: opacity .2s ease;
+                    border-radius: 30px;
+                }
+                &.active span{
+                    background: #000;
+                    border: 2px solid #fff;
+                }
+                
+            }
+        }
+        & .itemList__item {
+            padding-right: 15px;
+            padding-left: 15px;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            &:hover {
+                cursor: pointer;
+                transform: translateY(-10px);
+            }
+            
+            &.itemList__item-button {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: #212121;
+                border: none;
+                outline: none;
+                padding: 1.8rem;
+                transition: all 0.3s ease;
+                &.active {
+                    @include min-breakpoint(992) {
+                        transform: scale(1.1);
+                    }
+                    
+                }
+                & .button__icon {
+                    color: #ababab;
+                    font-size: 6.5rem;
+                }
+                & .button__text {
+                    color: #fff;
+                    font-size: 1.8rem;
+                    font-weight: 400;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+                & .button__subtext {
+                    color: #c5c5c5;
+                    font-size: 13px;
+                    line-height: 25px;
+                    letter-spacing: 0.9px;
+                    vertical-align: middle;
+                    display: table-cell;
+                    text-align: center;
+                }
+            }
+        }    
+    }
+    &.type2 {
+        line-height: 30px;
+        & .itemList__items{
+         
+            &-link{
+                color: #333333;
+                font-size: 18px;
+                padding: 0;
+            }
+        }
+        & .itemList__item {
+            font-size: 14px;
+            letter-spacing: 0.9px;
+            color: #fff;
+            font-weight: 300;
+          
+            & .itemList__item-button {
+                background-color: unset;
+                border: none;
+                outline: none;
+                color: #828282;
+                padding: 0;
+                & .button__icon {
+                    color: $secondary;
+                    padding: 5px;
+                    font-size: 11px;
+                }
+                & .button__text {
+                }
+            }
+            & .itemList__item-link {
+                background-color: unset;
+                border: none;
+                outline: none;
+                color: #1592fe;
+                padding: 0;
+                
+            }
+        }
+    }
+    &.type3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5rem;
+        flex-wrap: wrap;
+        & .itemList__item {
+            & .itemList__item-button {
+                background-color: unset;
+                border: none;
+                outline: none;
+                display: inline-block;
+                font-size: 14px;
+                color: #606060;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                font-weight: 500;
+                cursor: pointer;
+                padding-left: 10px;
+                padding-right: 10px;
+                &.active {
+                    color: $secondary;
+                }
+                & .button__text {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+} 

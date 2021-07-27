@@ -1,0 +1,12 @@
+.new-videos  
+    .container 
+        .row 
+            .col-12 
+                +renderTitle({title:'Popular Coupons',des:'New released & most used coupon codes. Data is updated frequently so you can save as much as you can.',seen:'See video',see:true})
+            each val in [1, 2, 3]
+                .col-lg-4.col-md-6.col-12(style="margin-top:3rem;margin-bottom:3rem")
+                    +renderCardNewVideo({
+                        date:'Deseret News . 10 Jun',
+                        name:'These Padded Wraps Will Protect Your Gadgets Like Precious Leftovers',
+                        month:'3 Month Ago '
+                    })

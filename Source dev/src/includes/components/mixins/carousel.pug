@@ -1,0 +1,70 @@
+
+mixin renderCarousel(data)
+    div(class=`owl-carousel ${data.class ? data.class : ''}` id=data.id)
+        each object in data.items
+            .item   
+                +renderCard(object)
+
+
+//- sample
+
+//- +renderCarousel({
+//-     id: "test",
+//-     items:[
+//-         { 
+//-             class: 'border  p-4',
+//-             cardImageBlock: {
+//-                             class: 'overflow-hidden w-100',
+//-                             iconImage: {src: 'assets/images/product_1.png', class: ''},
+//-                             content: {
+//-                                 class: 'w-100',
+//-                                 items: [[{type: 'text', values: {text: 'text1', class: '', type: 'desc'}}]]
+//-                             }
+//-             },
+//-             cardDescBlock: {
+//-                 text: {text: 'Horizontal, button, icon, text', type: 'header'},
+//-                 content: {
+//-                         class: 'w-100',
+//-                         items: [[{type: 'text', values: {text: 'text1', class: '', type: 'desc'}}],]
+//-                         }
+//-             }
+//-         }, 
+//-         { 
+//-             class: 'border  p-4',
+//-             cardImageBlock: {
+//-                             class: 'overflow-hidden w-100',
+//-                             iconImage: {src: 'assets/images/product_1.png', class: ''},
+//-                             content: {
+//-                                 class: 'w-100',
+//-                                 items: [[{type: 'text', values: {text: 'text1', class: '', type: 'desc'}}]]
+//-                             }
+//-             },
+//-             cardDescBlock: {
+//-                 text: {text: 'Horizontal, button, icon, text', type: 'header'},
+//-                 content: {
+//-                         class: 'w-100',
+//-                         items: [[{type: 'text', values: {text: 'text1', class: '', type: 'desc'}}],]
+//-                         }
+//-             }
+//-         }, 
+//-         { 
+//-             class: 'border  p-4',
+//-             cardImageBlock: {
+//-                             class: 'overflow-hidden w-100',
+//-                             iconImage: {src: 'assets/images/product_1.png', class: ''},
+//-                             content: {
+//-                                 class: 'w-100',
+//-                                 items: [[{type: 'text', values: {text: 'text1', class: '', type: 'desc'}}]]
+//-                             }
+//-             },
+//-             cardDescBlock: {
+//-                 text: {text: 'Horizontal, button, icon, text', type: 'header'},
+//-                 content: {
+//-                         class: 'w-100',
+//-                         items: [[{type: 'text', values: {text: 'text1', class: '', type: 'desc'}}],]
+//-                         }
+//-             }
+//-         }, 
+    
+//-     ]
+//- })

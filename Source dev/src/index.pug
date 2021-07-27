@@ -1,0 +1,147 @@
+extend includes/layout/layout.pug
+block content 
+   +renderTitle({title:'Popular Coupons',des:'New released & most used coupon codes. Data is updated frequently so you can save as much as you can.'})
+   +renderTitle({title:'Popular Coupons',des:'New released & most used coupon codes. Data is updated frequently so you can save as much as you can.',seen:'See video',see:true})
+   .row  
+      .col-md-3 
+         +renderCardType9( { src: 'https://fidex.com.ua/monster/kanter/demos/img/ava3.jpg',text: 'albin erlend', } )
+      .col-md-3 
+         +renderCardType10( { src: 'assets/images/home/offer.png',sale: 'Save up to',per:'70%',name:'Shirts' } )
+      .col-md-3 
+         +renderCardType7( { src: 'assets/images/home/product-seller.png',
+         sale:'25% OFF',
+         class:'orange',
+         textTrending:'Trending',
+         basePrice:'$37.50',
+         salePrice:'$50.50',
+         countView:'11',
+         title:'Womens Adidas ….',
+         desc:'Kohls',
+         line:'………………………'
+         } )
+      .col-md-3 
+         +renderCardNewVideo({
+            date:'Deseret News . 10 Jun',
+            name:'These Padded Wraps Will Protect Your Gadgets Like Precious Leftovers',
+            month:'3 Month Ago '
+         })
+   .row 
+      .col-md-12  
+         +renderButton({
+            href:'#',
+            text: {text: 'LOAD MORE'},
+            class:'border background-white',
+         })
+      .col-md-6.mt-5   
+         .content__menu
+            -
+               let itemListData = [
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-button', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-button', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-button', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-button', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-button', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-button', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                      
+                                       ]
+            +renderTitle({
+               column:true,
+               classCustom:'custom-title',
+               title:'Lawn & Garden',
+               list:true,
+               class:"itemList type2",
+               items:itemListData
+            })
+      .col-md-6.mt-5   
+         .content__menu
+            -
+               let itemListDatas = [
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-link', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-link', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-link', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-link', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-link', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-link', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                      
+                                       ]
+            +renderItemList({
+               class:"itemList type2",
+               items:itemListDatas
+            })
+      .col-md-12.mt-5   
+         .content__menu
+            -
+               let itemListDatass = [
+                                       {class:"itemList__items ml-5", button: { isLink: true,href:'#',  class: 'itemList__items-link', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item ml-5", button: { isLink: true,href:'#',  class: 'itemList__item-link', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item ml-5", button: { isLink: true,href:'#',  class: 'itemList__item-link', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item ml-5", button: { isLink: true,href:'#',  class: 'itemList__item-link', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item ml-5", button: { isLink: true,href:'#',  class: 'itemList__item-link', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item ml-5", button: { isLink: true,href:'#',  class: 'itemList__item-link', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item ml-5", button: { isLink: true,href:'#',  class: 'itemList__item-link', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                      
+                                       ]
+            +renderItemList({
+               class:"itemList type2 d-flex flex-wrap",
+               items:itemListDatass
+            })
+      .col-md-6.mt-5   
+         .content__menu
+            +renderTitle({
+               column:true,
+               title:'About',
+               classCustom:'custom-title',
+               text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+            })
+      .col-md-5.mt-5 
+         +renderCardNews({
+            image:true,
+            name:'Giving Tuesday: What it is and how you can get involved',
+            month:'December 1st, 2015',
+            desc:'Calling all philanthropists: Dec. 1 is Giving Tuesday. Now that Black Friday and Cyber Monday are over and you have all your Christmas shopping done (or, you know, at least youve bought a present or two), Giving Tuesday is about shifting focus toward a more charitable mindset. The founders of the holiday hope it becomes as natural of a habit to give on the Tuesday after Thanksgiving as it is to shop during the holiday weekend.'
+         })
+      .col-md-12.mt-5 
+         +renderCardNews({
+            name:'Giving Tuesday: What it is and how you can get involved',
+            month:'December 1st, 2015', 
+         })
+      .col-md-6
+         +renderCardCoupon({
+            coupon:true,
+            title:'Amazon',
+            site:'via amazon.com',
+            sale:'SAVE $28',
+            class:'green position-static',
+            name:'Save $28 on Drum SetEastar 14 icnh.',
+            month:'Ends in 7 days'
+         })
+      .col-md-6 
+         +renderCardAlert({
+            text:'You’ve earned $0 in cashback. Sign up to activate'
+         })
+      .col-md-6
+         +renderCardCoupon({
+            discount:'DISCOUNT',
+            per:'10%',
+            shop:'SHOP NOW',
+            amazon:'Amazon'
+           
+         })
+      .col-md-6  
+         form(action="", method="get") 
+            +renderInput({class: 'mb-2 ml-2 radius input-component w-100',
+                  input: {placeholder: '', class: 'border-none '},
+                  iconImage: {name: 'fas fa-search', class: 'icon-search'},
+                  })
+      .col-md-12  
+         -
+            let data = [
+               {title:'Is it hard to take online courses?',content:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit. '},
+               {title:'Is it hard to take online courses?',content:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit. '},
+               {title:'Is it hard to take online courses?',content:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit. '},
+               {title:'Is it hard to take online courses?',content:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit. '},
+               {title:'Is it hard to take online courses?',content:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit. '},
+               
+               ]
+         each val in data
+            +renderCollapse(val)

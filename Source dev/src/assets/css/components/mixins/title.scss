@@ -1,0 +1,32 @@
+$color:#333333;
+.heading {
+   margin:3.5rem 0;
+   &__title{
+      color: $color;
+      font-size: 3.3rem;
+      font-weight: 500;
+   }
+   &__description{
+      color: #202020;
+      font-size: 16px;
+      line-height: 3.1rem;
+   }
+   &__text{
+      font-size: 14px;
+      color: #828282;
+      line-height: 1.64;
+   }
+   .custom-title{
+      margin-bottom: 2.1rem;
+      font-size: 1.6rem;
+   }
+   .header__box{
+      .heading__see{
+         margin-top: -6px;
+         display: block;
+         color: #1592fe;
+         font-size: 2rem;
+        
+      }
+   }
+}

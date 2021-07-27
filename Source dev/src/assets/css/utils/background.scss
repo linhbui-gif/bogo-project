@@ -1,0 +1,5 @@
+@each $name, $color in $utils-color-mapping {
+    .#{$acr-background}-#{$name} {
+        background-color: $color;
+        }
+}

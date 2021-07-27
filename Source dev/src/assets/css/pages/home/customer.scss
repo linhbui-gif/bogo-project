@@ -1,0 +1,80 @@
+.customer {
+  position: relative;
+  padding-block: 8.5rem;
+  background-image: url("https://fidex.com.ua/monster/kanter/demos/img/bg3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:before {
+    content: "";
+    @include positionControl(absolute, 0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  &__wrapper {
+    .title {
+      &__title {
+        color: $white;
+      }
+
+      &__desc {
+        color: $white;
+      }
+    }
+
+    .owl-nav {
+      display: none;
+      @include positionControl(absolute, 50%, 50%, -1, -1);
+      transform: translate(-50%, -100%);
+      width: 100vw;
+      margin-top: 0;
+
+      button {
+        background-color: $white !important;
+        opacity: 0.4;
+        width: 8rem;
+        height: 6rem;
+        transition: 0.5s;
+        margin-inline: 0 !important;
+
+        span {
+          color: #808080;
+          font-size: 6rem;
+        }
+
+        &.owl-next {
+          transform: translateX(120%);
+          transition: 0.5s;
+        }
+
+        &.owl-prev {
+          transform: translateX(-120%);
+          transition: 0.5s;
+        }
+      }
+
+      @include min-breakpoint(1200) {
+        @include flexControl(row, space-between, center);
+      }
+    }
+  }
+
+  &:hover {
+    .owl-nav {
+      .owl-next,
+      .owl-prev {
+        transform: translateX(0);
+        transition: 0.5s;
+
+        &:hover {
+          opacity: 1;
+          transition: 0.5s;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}

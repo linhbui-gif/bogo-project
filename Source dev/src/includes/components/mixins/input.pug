@@ -1,0 +1,69 @@
+mixin renderInputTag(data)
+    //- data
+            type: loai input
+            placeholder: placeholder input
+            id: id  input
+            value: value input
+            disabled: disabled
+            max:
+            min:
+            checked: checked  --> dung cho loai checkbox
+            class: class cua the input
+
+    input(type=`${data.type ? data.type: 'text'}` 
+        placeholder=data.placeholder
+        id=data.id name=data.name  
+        value=data.value
+        disabled=data.disabled
+        checked=data.checked
+        max=data.max 
+        min=data.min
+        class=`p-2 outline-none flex-grow-1 ${data.class ? data.class: ''}`)
+
+mixin renderInput(data)
+    //- data
+            class: class cua khoi chua icon va input
+            text: {} --> dinh nghia cho  component text --> co the dung lam label cua input
+            iconImage: {} --> dinh nghia cho  component iconImage
+            input: {} --> dinh nghia cho  component the input mac dinh (khong icon)
+
+    if data.iconImage && (data.iconImage.name || data.iconImage.src)
+        div(class=`d-inline-flex align-items-center border ${data.class ? data.class: ''}`)
+            if data.text
+                +renderText(data.text)
+            if data.iconRight
+                +renderInputTag(data.input)
+                +renderIconImage(data.iconImage)
+            else 
+                +renderIconImage(data.iconImage)
+                +renderInputTag(data.input)
+    else 
+        if data.label
+            +renderText(data.text)
+        +renderInputTag(data.input)
+
+
+//- sample
+
+//- +renderInput({iconRight: true,  
+//-             class: 'mb-2 ml-2 rounded-2',
+//-             input: {value: 'iconright', class: 'border-none'},
+//-             iconImage: {name: 'fas fa-search', class: 'text-orange'},
+//-             })
+//- br
+//- br
+//- +renderInput({class: 'mb-2 ml-2 rounded-2',
+//-             input: {placeholder: 'iconleft', class: 'border-none'},
+//-             iconImage: {name: 'fas fa-search', class: 'text-orange'},
+//-             })
+//- br
+//- br
+//- +renderInput({input: {value: 'default'}})
+//- br
+//- br
+//- +renderInput({class: 'mb-2 ml-2 rounded-2',
+//-             input: {placeholder: 'type password', type: 'password', class: 'border-none'},
+//-             iconImage: {name: 'fas fa-search', class: 'text-orange'},
+//-             })
+//- br
+//- br

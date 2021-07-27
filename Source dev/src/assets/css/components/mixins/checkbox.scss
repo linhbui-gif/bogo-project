@@ -1,0 +1,28 @@
+// Checkbox component
+$checkbox-font-size: 1.5rem;
+$checkbox-box-padding: 0.5rem;
+.checkbox__component {
+    display: inline-flex;
+    align-items: stretch;
+    font-size: $checkbox-font-size;
+    & .checkbox__component-box {
+        padding: $checkbox-box-padding;
+        @include positionControl(relative, -1, -1, -1, -1);
+        & .box__input {
+            @include positionControl(absolute, 0, 0, 0, 0);
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    & .checkbox__component-label {
+        display: flex;
+        align-items: center;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}

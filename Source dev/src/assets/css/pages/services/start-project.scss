@@ -1,0 +1,27 @@
+.services__startProject {
+    position: relative;
+    padding-top: 8.5rem;
+    padding-bottom: 8.5rem;
+    background-image: url('/assets/images/services/why-choose-us.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    &:before {
+      content: '';
+      background-color: rgba(0, 0, 0, 0.9);
+      @include positionControl(absolute, 0, 0, 0, 0);
+    }
+    & .container {
+        & .services__startProject-content {
+            & h2 {
+                color: $white;
+            }
+            & .title {
+                margin-bottom: 2.5rem;
+            }
+            & .content__button {
+                z-index: 0;
+                text-align: center;                
+            }
+        }
+    }
+}

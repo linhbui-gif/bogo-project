@@ -1,0 +1,14 @@
+.discounts  
+    .container 
+        .row 
+            .col-12 
+                +renderTitle({title:'Todays Top Coupons And Discount Codes',des:'Some suggestions of top deals & coupons from top online stores. Lets see if you can find what you are looking for.'})
+            each val in [1, 2, 3, 4,5,6]
+                .col-lg-4.col-md-6.col-12(style="margin-top:3rem")
+                    +renderCardCoupon({
+                        discount:'DISCOUNT',
+                        per:'10%',
+                        shop:'SHOP NOW',
+                        amazon:'Amazon'
+                    
+                    })

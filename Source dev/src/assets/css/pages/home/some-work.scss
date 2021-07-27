@@ -1,0 +1,137 @@
+.somework {
+  position: relative;
+  background-image: url("https://fidex.com.ua/monster/kanter/demos/img/bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+
+  &:before {
+    content: "";
+    @include positionControl(absolute, 0, 0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  & .container {
+    & .somework__wrapper {
+      & .somework__wrapper-heading {
+      }
+      & .somework__wrapper-content {
+        margin: 0;
+        & .content__item {
+          & .card__content-icon {
+            font-size: 7.2rem;
+          }
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+  & .container-fluid {
+    & .somework__portfolio {
+      & .somework__portfolio-items {
+        margin: 0;
+        padding: 0;
+        & .items__link {
+          & .items__link-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+          & .items__link-overlay {
+            padding: 10px;
+            & .overlay__content {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              height: 100%;
+              & .overlay__content-icon {
+                position: absolute;
+                right: 2.5rem;
+                top: 2.5rem;
+                color: #fff;
+                width: 40px;
+                height: 40px;
+                background-color: #c69c6d;
+                text-align: center;
+                font-size: 13px;
+                line-height: 40px;
+                vertical-align: middle;
+                border-radius: 50%;
+              }
+              & .overlay__content-title {
+                font-weight: 600;
+                text-transform: uppercase;
+                font-size: 1.8rem;
+                line-height: 1.8;
+                &:after {
+                  content: "";
+                  display: block;
+                  height: 1px;
+                  width: 3rem;
+                  background-color: $secondary;
+                  margin: 0 auto;
+                  margin-top: 12px;
+                  margin-bottom: 5px;
+                }
+              }
+              & .overlay__content-desc {
+                margin-top: 10px;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.mouseoverlay {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  & .mouseoverlay__overlay {
+    color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-transform: translate(0, 100%);
+    transform: translate(0, 100%);
+    visibility: hidden;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-transition-property: -webkit-transform, visibility;
+    transition-property: transform, visibility;
+  }
+
+  &.top .mouseoverlay__overlay {
+    -webkit-transform: translate3d(0, -100%);
+    transform: translate(0, -100%);
+  }
+
+  &.right .mouseoverlay__overlay {
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+
+  &.bottom .mouseoverlay__overlay {
+    -webkit-transform: translate(0, 100%);
+    transform: translate(0, 100%);
+  }
+
+  &.left .mouseoverlay__overlay {
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
+
+  &:hover .mouseoverlay__overlay {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    visibility: visible;
+    cursor: pointer;
+  }
+}

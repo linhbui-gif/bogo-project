@@ -1,0 +1,50 @@
+mixin renderCheckbox(data)
+    //- require: fontaesome + js
+    //- data attribute
+        class: 
+        name: checkbox name
+        id: checkbox id
+        value: checkbox value
+        disabled: true/false
+        checked: true/false
+        checkIcon: class of fontaesome
+        uncheckIcon: class of fontaesome
+        checkClass: class name -> define color,background,.. of icon --> checkbox is check
+        uncheckClass: class name -> define color,background,.. of icon --> checkbox is uncheck
+        text: {} --> dinh nghia cho  component text
+        
+
+    label(class=`checkbox__component ${data.class ? data.class: ''}`)
+        span(class='checkbox__component-box')
+            input(type='checkbox' id=data.id value=data.value
+                name=data.name class='box__input' 
+                disabled=data.disabled checked=data.checked)
+            span(class=`box__icon ${data.checked ? (data.checkClass ? data.checkClass: 'text-blue'): (data.uncheckClass ? data.uncheckClass: 'text-gray')}  
+                ${data.disabled ? 'text-disable': ''}`)
+                i(class=`${data.checked ? (data.checkIcon ? data.checkIcon: 'fas fa-check-square'): (data.uncheckIcon ? data.uncheckIcon: 'far fa-square') }`
+                    data-icon-check=`${data.checkIcon ? data.checkIcon: 'fas fa-check-square'}`
+                    data-icon-uncheck=`${data.uncheckIcon ? data.uncheckIcon: 'far fa-square'}`
+                    data-Class-check=`${data.checkClass ? data.checkClass: 'text-blue'}`
+                    data-Class-uncheck=`${data.uncheckClass ? data.uncheckClass: 'text-gray'}`)
+        if data.text 
+            +renderText({
+                text: data.text.text,
+                class: `checkbox__component-label ${data.text.class ? data.text.class: ''}`,
+            })
+        
+
+
+//- sample
+
+//- br
+//- -
+//-     var listData = [{text: {text: 'Default with label only'}, id:'11', name: '11', value:'sss'},
+//-                     {isCheck: true, checked: true, text: {text: 'heart icon'}, checkIcon: 'fas fa-heart', checkClass: 'text-red', uncheckIcon: 'far fa-heart', uncheckClass: 'text-gray'},
+//-                     {disabled: true, checked: true, text: {text: 'Disable'}, checkIcon: 'fas fa-heart', checkClass: 'text-red', uncheckIcon: 'far fa-heart', uncheckClass: 'text-gray'},
+//-                     {text: {text: 'Test'}, checkIcon: 'fas fa-minus-square', checkClass: 'text-red', uncheckIcon: 'far fa-minus-square', uncheckClass: 'text-gray'},
+//-                     {id: 'test_id', name: 'test_name', value: 'test_value'}]
+
+//- each data in listData
+//-     +renderCheckbox(data)
+//-     br
+//- br

@@ -1,0 +1,19 @@
+.selling 
+    .container 
+       .row  
+            .col-12 
+               +renderTitle({title:'Best - Selling Products',des:'Some suggestions of top deals & coupons from top online stores. Lets see if you can find what you are looking for.'})
+            each val in [1, 2, 3, 4,5,6,7,8]
+                .col-lg-3.col-md-6.col-12(style="margin-top:3rem")
+                    +renderCardType7( { src: 'assets/images/home/product-seller.png',
+                        sale:'25% OFF',
+                        class:'orange',
+                        textTrending:'Trending',
+                        basePrice:'$37.50',
+                        salePrice:'$50.50',
+                        countView:'11',
+                        title:'Womens Adidas ….',
+                        desc:'Kohls',
+                        line:'………………………'
+                        } )
+                

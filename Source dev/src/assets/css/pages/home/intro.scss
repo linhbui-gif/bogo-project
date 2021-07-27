@@ -1,0 +1,16 @@
+.intro{
+    .intro__card{
+        .intro__card-content{
+            padding: 0;
+        }
+    }
+}
+@media (max-width: 992px){
+    .intro{
+        .intro__card{
+            intro__card-content{
+                width: 100%;
+            }
+        }
+    }
+}

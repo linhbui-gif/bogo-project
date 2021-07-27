@@ -1,0 +1,24 @@
+@each $name, $value in $utils-sizing-list {
+  .#{$acr-width}-#{$name} {
+    width: $value;
+  }
+  .#{$acr-max-width}-#{$name} {
+    max-width: $value;
+  }
+  .#{$acr-min-width}-#{$name} {
+    min-width: $value;
+  }
+  .#{$acr-height}-#{$name} {
+    height: $value;
+  }
+  .#{$acr-max-height}-#{$name} {
+    max-height: $value;
+  }
+  .#{$acr-min-height}-#{$name} {
+    min-height: $value;
+  }
+}
+
+
+
+

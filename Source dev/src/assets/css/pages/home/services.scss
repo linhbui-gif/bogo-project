@@ -1,0 +1,103 @@
+.services {
+  padding-top: 8.5rem;
+  padding-bottom: 8.5rem;
+  background-image: url(https://fidex.com.ua/monster/kanter/demos/img/bg2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  & .container {
+    & .services__wrapper {
+      & .services__wrapper-heading {
+        & .title {
+          & .title__title {
+            color: $white;
+            font-size: 2.7rem;
+            &::after {
+              content: "";
+              display: block;
+              height: 2px;
+              width: 5.5rem;
+              background-color: $secondary;
+              margin: 0 auto;
+              margin-top: 13px;
+              margin-bottom: 1.8rem;
+            }
+            & .title__title-sub {
+            }
+          }
+          & .title__desc {
+            color: $white;
+          }
+        }
+      }
+      & .services__wrapper-content {
+        width: 100%;
+        & .content__menu {
+          padding-bottom: 3rem;
+          margin: 0;
+        }
+        & .content__body {
+          margin: 0;
+          & .content__body-left {
+            padding-top: 3rem;
+            & h2 {
+              text-transform: none;
+              font-size: 18px;
+              font-weight: 500;
+              letter-spacing: 0.8px;
+              color: $white;
+              &::after {
+                content: "";
+                display: block;
+                height: 2px;
+                width: 5.5rem;
+                background-color: $secondary;
+                margin-top: 13px;
+                margin-bottom: 1.8rem;
+                margin-left: 0;
+              }
+            }
+            & p {
+              font-size: 14px;
+              line-height: 2.3rem;
+              color: #eee;
+              margin-top: 2rem;
+            }
+          }
+          & .content__body-right {
+            padding-top: 3rem;
+          }
+        }
+      }
+      & .services__wrapper-viewall {
+        z-index: 1;
+        padding-top: 6rem;
+        & .viewall__button {
+          color: $white;
+          border: none;
+          font-size: 12px;
+          letter-spacing: 0.4px;
+          font-weight: 500;
+          text-transform: uppercase;
+          transition: all 0.3s;
+          &:hover {
+            color: $secondary;
+          }
+          & .viewall__button-icon {
+            font-size: 12px;
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@mixin util-spacing($width-name) {
+  @each $num, $size in $utils-spacing-list {
+    // margin
+    .#{$acr-margin}#{$width-name}-#{$num} {
+      margin: $size ;
+    }
+    .#{$acr-margin-top}#{$width-name}-#{$num}, .#{$acr-margin-top-bottom}#{$width-name}-#{$num} {
+      margin-top: $size ;
+    }
+    .#{$acr-margin-right}#{$width-name}-#{$num}, .#{$acr-margin-left-right}#{$width-name}-#{$num} {
+      margin-right: $size ;
+    }
+    .#{$acr-margin-bottom}#{$width-name}-#{$num}, .#{$acr-margin-top-bottom}#{$width-name}-#{$num} {
+      margin-bottom: $size ;
+    }
+    .#{$acr-margin-left}#{$width-name}-#{$num}, .#{$acr-margin-left-right}#{$width-name}-#{$num} {
+      margin-left: $size ;
+    }
+    // padding
+    .#{$acr-padding}#{$width-name}-#{$num} {
+      padding: $size ;
+    }
+    .#{$acr-padding-top}#{$width-name}-#{$num}, .#{$acr-padding-top-bottom}#{$width-name}-#{$num} {
+      padding-top: $size ;
+    }
+    .#{$acr-padding-right}#{$width-name}-#{$num}, .#{$acr-padding-left-right}#{$width-name}-#{$num} {
+      padding-right: $size ;
+    }
+    .#{$acr-padding-bottom}#{$width-name}-#{$num}, .#{$acr-padding-top-bottom}#{$width-name}-#{$num} {
+      padding-bottom: $size ;
+    }
+    .#{$acr-padding-left}#{$width-name}-#{$num}, .#{$acr-padding-left-right}#{$width-name}-#{$num} {
+      padding-left: $size ;
+    }
+  }
+}
+@each $width-num, $width-name in $minwidth-media {
+  @if ($width-num == '') {
+      @include util-spacing($width-name);
+  } @else {
+      // reponsive
+      @include min-breakpoint($width-num) {
+          @include util-spacing($width-name);
+      }
+  }
+  
+}

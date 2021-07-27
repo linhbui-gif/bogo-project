@@ -1,0 +1,292 @@
+header.header 
+    .container
+        +renderNavigation({
+                        class:"navbar",
+                        items:[
+                            [
+                                {   
+                                    type:"iconImage",
+                                    colClass:"brand-wrapper z-index-1001",
+                                    values:{
+                                            linkWrapper:{   href: "#",
+                                                            class:"brand smooth-scroll", 
+                                                            items:[
+                                                                {
+                                                                    class:"logo-white",
+                                                                    isImage: true,
+                                                                    src: 'assets/images/logo/logo.svg',
+                                                                    alt:"logo" 
+                                                                },
+                                                                {
+                                                                    class:"logo-dark",
+                                                                    isImage: true,
+                                                                    src: './assets/images/logodark.png',
+                                                                    alt:"logo" 
+                                                                }
+                                                            ]
+                                                        },
+                                        }
+                                }, 
+                                {
+                                    type: 'itemList', 
+                                    colClass:"nav-menu z-index-1001  d-flex align-items-center justify-content-end ",
+                                    values: {
+                                        class:"nav-list d-flex align-items-center align-items-center",
+                                        items:[
+                                                {   
+                                                    class:"nav-item has-sub-menu nav-item-main", 
+                                                    button: { 
+                                                            class: 'nav-link ', 
+                                                            href:'#', 
+                                                            text: {text: 'Department'}, 
+                                                            
+                                                            
+                                                           
+                                                    },
+                                                    itemList:{
+                                                        class:"item-sub",
+                                                        items:[
+                                                                {
+                                                                    class:"sub__li", 
+                                                                    button: {
+                                                                                class: '', 
+                                                                                href:'#', 
+                                                                                text: {text: 'about us'}
+                                                                            }
+                                                                },
+                                                                {
+                                                                     
+                                                                    button: {
+                                                                                class: 'w-100 d-block', 
+                                                                                href:'#', 
+                                                                                text: {text: 'contact'}
+                                                                            },
+                                                                    class:"nav-item-sub has-sub-menu",
+                                                                    itemList:{
+                                                                                class:"sub_dropdown-lv2",
+                                                                                items:[
+                                                                                            {
+                                                                                                class:"", 
+                                                                                                button: {
+                                                                                                            class: '', 
+                                                                                                            href:'#', 
+                                                                                                            text: {text: 'contact - default'}
+                                                                                                        }
+                                                                                            },
+                                                                                            {
+                                                                                                class:"", 
+                                                                                                button: {
+                                                                                                            class: '', 
+                                                                                                            href:'#', 
+                                                                                                            text: {text: 'contact - 2'}
+                                                                                                        }
+                                                                                            },
+                                                                                            {
+                                                                                                class:"", 
+                                                                                                button: {
+                                                                                                            class: '', 
+                                                                                                            href:'#', 
+                                                                                                            text: {text: 'contact - 3'}
+                                                                                                        }
+                                                                                            },
+                                                                                            {
+                                                                                                class:"", 
+                                                                                                button: {
+                                                                                                            class: '', 
+                                                                                                            href:'#', 
+                                                                                                            text: {text: 'contact - 4'}
+                                                                                                        }
+                                                                                            },
+                                                                                            {
+                                                                                                class:"", 
+                                                                                                button: {
+                                                                                                            class: '', 
+                                                                                                            href:'#', 
+                                                                                                            text: {text: 'contact - 5'}
+                                                                                                        }
+                                                                                            }
+
+                                                                                        ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    class:"", 
+                                                                    button: {
+                                                                                class: 'w-100 d-block', 
+                                                                                href:'#', 
+                                                                                text: {text: 'services'}
+                                                                            },
+                                                                    class:"nav-item-sub ",
+                                                                   
+                                                                },
+                                                                {
+                                                                    class:"", 
+                                                                    button: {
+                                                                                class: 'w-100 d-block', 
+                                                                                href:'#', 
+                                                                                text: {text: 'blog'}
+                                                                            },
+                                                                    class:"nav-item-sub ",
+                                                                   
+                                                                },
+                                                                {
+                                                                    class:"", 
+                                                                    button: {
+                                                                                class: 'w-100 d-block', 
+                                                                                href:'#', 
+                                                                                text: {text: 'portfolio'}
+                                                                            },
+                                                                    class:"nav-item-sub",
+                                                                   
+                                                                },
+                                                                {
+                                                                    class:"", 
+                                                                    button: {
+                                                                                class: 'w-100 d-block', 
+                                                                                href:'#', 
+                                                                                text: {text: 'prices'}
+                                                                            },
+                                                                    class:"nav-item-sub ",
+                                                                   
+                                                                },
+                                                                {
+                                                                    class:"", 
+                                                                    button: {
+                                                                                class: '', 
+                                                                                href:'#', 
+                                                                                text: {text: '404 page'}
+                                                                            }
+                                                                },
+                                                                {
+                                                                    class:"", 
+                                                                    button: {
+                                                                                class: '', 
+                                                                                href:'#', 
+                                                                                text: {text: 'terms'}
+                                                                            }
+                                                                },
+                                                                {
+                                                                    class:"", 
+                                                                    button: {
+                                                                                class: '', 
+                                                                                href:'#', 
+                                                                                text: {text: 'FAQ page'}
+                                                                            }
+                                                                }
+                                                                
+                                                        ]
+                                                    }
+                                                   
+                                                },
+                                                {   
+                                                    class:"nav-item ", 
+                                                    button: { 
+                                                            class: 'nav-link ', 
+                                                            href:'#', 
+                                                            text: {text: 'Deals'}, 
+                                                           
+                                                    },
+                                                    
+                                                },
+                                                {
+                                                    class:"nav-item",
+                                                    button: { 
+                                                            class: 'nav-link ', 
+                                                            href:'#', 
+                                                            text: {text: 'Price Drop'}
+                                                    }
+                                                },
+                                                {
+                                                    class:"nav-item",
+                                                    button: { 
+                                                            class: 'nav-link ', 
+                                                            href:'#', 
+                                                            text: {text: 'Event'}
+                                                    }
+                                                },
+                                                {
+                                                    class:"nav-item",
+                                                    button: { 
+                                                            class: 'nav-link ', 
+                                                            href:'#', 
+                                                            text: {text: 'Blog'}
+                                                    }
+                                                },
+                                        ]
+                                    }
+                                },
+                                 {
+                                    type: 'text', 
+                                    colClass:"toggler-menu-wrapper flex-grow-1 text-right",
+                                    values: {icon:true}
+                                },
+                                {
+                                    type: 'input', 
+                                    colClass:"nav-search flex-grow-1",
+                                    values: { class: 'mb-2 ml-2 radius input-component w-100',
+                                                input: {placeholder: '', class: 'border-none '},
+                                                iconImage: {name: 'fas fa-search', class: 'icon-search'},}
+                                },
+                                
+                            ],
+                        ]
+                })
+    //- start  mobile menu
+    div(id="mobile-menu" class="")
+        ul.main-nav
+            li.close-nav
+                i.fa.fa-times
+            li.item
+                a(href='#').item__link Home
+            li.item.hassubmenu
+                a(href='#').item__link About Us
+                ul.submenu
+                    li.submenu__item
+                       a(href='#').submenu__item-link T-shirt
+                    li.submenu__item
+                       a(href='#').submenu__item-link T-shirt
+                    li.submenu__item
+                       a(href='#').submenu__item-link T-shirt   
+            li.item.hassubmenu
+                a(href='#').item__link Contact
+                ul.submenu
+                    li.submenu__item
+                       a(href='#').submenu__item-link T-shirt
+                    li.submenu__item
+                       a(href='#').submenu__item-link T-shirt
+                    li.submenu__item
+                       a(href='#').submenu__item-link T-shirt
+                
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

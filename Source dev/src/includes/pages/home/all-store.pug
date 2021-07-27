@@ -1,0 +1,25 @@
+.all-store(style="border: solid 1px #dfdfdf;")  
+    .container 
+        .row 
+            .col-12 
+                +renderTitle({title:'All Storesr',des:'New released & most used coupon codes. Data is updated frequently so you can save as much as you can.'})
+            -
+               let itemListData = [
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-button', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-button', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-button', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-button', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-button', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                       {class:"itemList__item", button: { isLink: true,href:'#',  class: 'itemList__item-button', text: {class: 'button__text', text: 'Rich media banners'}}},
+                                      
+                                       ]
+            each val in [1, 2, 3, 4,5,6]
+                .col-lg-2.col-md-6.col-6.mb-5 
+                    +renderTitle({
+                    column:true,
+                    classCustom:'custom-title',
+                    title:'Lawn & Garden',
+                    list:true,
+                    class:"itemList type2",
+                    items:itemListData
+                    })

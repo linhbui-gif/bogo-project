@@ -1,0 +1,44 @@
+.creative {
+  position: relative;
+  padding-block: 8.5rem;
+  background-image: url("https://fidex.com.ua/monster/kanter/demos/img/bg3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:before {
+    content: "";
+    @include positionControl(absolute, 0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  &__wrapper {
+  }
+}
+
+.owl-theme .owl-dots {
+  display: flex;
+  margin-top: 4rem !important;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    span {
+      background-color: $white !important;
+      width: 8px !important;
+      height: 8px !important;
+    }
+
+    &.active {
+      span {
+        border: 2px solid $white !important;
+        width: 10px !important;
+        height: 10px !important;
+        background-color: transparent !important;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

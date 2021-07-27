@@ -1,0 +1,28 @@
+.progress {
+  position: relative;
+  padding-block: 8.5rem;
+  background-image: url("https://fidex.com.ua/monster/kanter/demos/img/bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:before {
+    content: "";
+    @include positionControl(absolute, 0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .title {
+    margin-bottom: 0;
+    &__title {
+      color: $white;
+    }
+
+    &__desc {
+      color: $white;
+    }
+
+    @include breakpoint(992) {
+      margin-bottom: 3rem;
+    }
+  }
+}

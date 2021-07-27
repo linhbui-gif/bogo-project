@@ -1,0 +1,19 @@
+mixin renderTitle(data)
+    if data.see 
+        .heading
+            .header__box.d-flex.align-items-center 
+              h3.heading__title.mb-4=data.title 
+              span.heading__see.ml-4=data.seen
+                <i class="fas fa-angle-double-right ml-4"></i>
+            p.heading__description= data.des
+    else if data.column 
+        .heading
+            h3.heading__title(class=`${data.classCustom}`)=data.title 
+            if data.list
+              +renderItemList(data)
+            else 
+              p.heading__text=data.text
+    else
+        .heading
+            h3.heading__title.mb-4=data.title 
+            p.heading__description= data.des

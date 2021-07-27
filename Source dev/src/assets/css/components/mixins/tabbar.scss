@@ -1,0 +1,66 @@
+.tabbar__collapse {
+    max-width: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.35s ease;
+    transition: visibility 0.4s ease;
+    visibility: hidden;
+    &.show {
+        max-width: 100vw;
+        max-height: 100vh;
+        visibility: visible;
+    }
+}
+[data-toggle="tabbar__collapse"].active {
+    background-color: $blue;
+    color: $white;
+    
+}
+.tabbar {
+    & .tabbar__menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        
+        &::after {
+            content: "";
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: #c69c6d;
+            margin: 0 auto;
+        }
+        & .tabbar__menu-item {
+            background-color: #f4f3f3;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #606060;
+            line-height: 1.3;
+            font-weight: 300px;
+            margin: 1px 2px 0px 0px ;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: .5s;
+            &.active {
+                background-color: $secondary;
+                color: $white;
+            }
+            
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    & .tabbar__content {
+        font-size: 14px;
+        color: #606060;
+        line-height: 1.6;
+        margin-top: 2rem;
+        padding: 0;
+        padding-bottom: 10px;
+    }
+}
+

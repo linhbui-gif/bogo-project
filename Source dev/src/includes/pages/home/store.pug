@@ -1,0 +1,10 @@
+.store 
+    .container
+        .row  
+           .col-12
+              +renderTitle({title:'Popular Coupons',des:'New released & most used coupon codes. Data is updated frequently so you can save as much as you can.'})
+        .store__box.owl-carousel#carousel-store.mt-5
+            each val in [1, 2, 3, 4,5,6,7,8]
+                .store__box-item
+                    +renderCardType9( { src: 'https://fidex.com.ua/monster/kanter/demos/img/ava3.jpg',text: 'albin erlend', } )
+            

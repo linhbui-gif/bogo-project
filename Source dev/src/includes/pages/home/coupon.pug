@@ -1,0 +1,16 @@
+.coupons  
+    .container 
+        .row 
+            .col-12 
+                +renderTitle({title:'Popular Coupons',des:'Some suggestions of top deals & coupons from top online stores. Lets see if you can find what you are looking for.'})
+            each val in [1, 2, 3, 4,5,6,7,8]
+                .col-lg-3.col-md-6.col-12(style="margin-top:3rem;margin-bottom:3rem")
+                    +renderCardCoupon({
+                    coupon:true,
+                    title:'Amazon',
+                    site:'via amazon.com',
+                    sale:'SAVE $28',
+                    class:'green position-static',
+                    name:'Save $28 on Drum SetEastar 14 icnh.',
+                    month:'Ends in 7 days'
+                    })

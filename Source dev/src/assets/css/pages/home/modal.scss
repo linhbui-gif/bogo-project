@@ -1,0 +1,341 @@
+.menuModal {
+  background-image: url("https://fidex.com.ua/monster/kanter/demos/img/bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  overflow-y: scroll;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: center;
+  transition: 0.5s;
+
+  &.active {
+    pointer-events: all;
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.5s;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-rows: 40% 60%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    &-link {
+      position: relative;
+      text-decoration: none;
+      padding-inline: 1.5rem;
+      color: $white;
+
+      .link__brief {
+        margin-top: 2rem;
+        @include fontControl(1.6rem, 1.6, 0, 300);
+        transition: 0.5s;
+      }
+
+      .link__title {
+        margin-block: 4px 2rem;
+        @include fontControl(2.4rem, 1.6, 600);
+      }
+
+      &:before {
+        content: "";
+        @include positionControl(absolute, 0, 0, 0, 0);
+        background-color: #1b1b1b;
+        z-index: -1;
+        transition: 0.5s;
+      }
+
+      &:hover {
+        &:before {
+          background-color: rgba(33, 33, 33, 0.85);
+          transition: 0.5s;
+        }
+
+        .link__brief {
+          color: $secondary;
+          transition: 0.5s;
+        }
+      }
+
+      &:nth-child(1) {
+        grid-area: 1 / 1 / span 1 / span 1;
+
+        @include breakpoint(1200) {
+          grid-area: 1 / 1 / span 1 / span 2;
+        }
+
+        @include breakpoint(768) {
+          grid-area: 1 / 1 / span 1 / span 4;
+        }
+      }
+
+      &:nth-child(2) {
+        grid-area: 1 / 4 / span 1 / span 1;
+
+        @include breakpoint(1200) {
+          grid-area: 1 / 3 / span 1 / span 2;
+
+          &:before {
+            background-color: rgba(33, 33, 33, 0.85);
+          }
+        }
+
+        @include breakpoint(768) {
+          grid-area: 2 / 1 / span 1 / span 4;
+        }
+      }
+    }
+
+    &-center {
+      grid-area: 1 / 2 / span 1 / span 2;
+      background-color: #212121;
+      padding-inline: 4rem;
+      color: $white;
+
+      .center__title {
+        @include fontControl(2.2rem, 2.2rem, 0, 400);
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #625958;
+      }
+
+      .center__desc {
+        @include fontControl(1.6rem, 1.6, 0, 400);
+        border-left: 3px solid $secondary;
+        padding-left: 2rem;
+        margin-top: 2rem;
+      }
+
+      @include breakpoint(1200) {
+        grid-area: 2 / 1 / span 1 / span 4;
+      }
+
+      @include breakpoint(768) {
+        grid-area: 3 / 1 / span 1 / span 4;
+      }
+    }
+
+    &-video {
+      grid-area: 2 / 1 / span 1 / span 2;
+      background-color: rgba(27, 27, 27, 0.9);
+      color: $white;
+      text-align: center;
+
+      .video__link {
+        text-decoration: none;
+        color: $white;
+        width: max-content;
+
+        i {
+          font-size: 6rem;
+          padding: 2rem 1.6rem 2rem 2.4rem;
+          border: 2px solid $white;
+          transition: 0.5s;
+        }
+
+        &:hover {
+          i {
+            color: $secondary;
+            border-color: $secondary;
+            transform: translateY(-1rem);
+            transition: 0.5s;
+          }
+        }
+      }
+
+      .video__desc {
+        margin-top: 2rem;
+        @include fontControl(1.6rem, 1.6, 0, 300);
+        padding-inline: 1.5rem;
+      }
+
+      @include breakpoint(1200) {
+        grid-area: 3 / 1 / span 1 / span 2;
+      }
+
+      @include breakpoint(992) {
+        grid-area: 3 / 1 / span 1 / span 4;
+      }
+
+      @include breakpoint(768) {
+        grid-area: 4 / 1 / span 1 / span 4;
+      }
+    }
+
+    &-form {
+      grid-area: 2 / 3 / span 1 / span 2;
+      background-color: rgba(33, 33, 33, 0.9);
+      color: $white;
+
+      .form__wrapper {
+        width: 100%;
+        padding-inline: 4.5rem;
+      }
+
+      .form__title {
+        @include fontControl(2.2rem, 2.2rem, 0, 400);
+        padding-bottom: 1.5rem;
+        margin-bottom: 2.2rem;
+        border-bottom: 1px solid #625958;
+      }
+
+      .form__details {
+        &-name,
+        &-email,
+        &-services,
+        &-message {
+          @include fontControl(14px, 1.8rem, 0, 300);
+          display: block;
+          width: 100%;
+          border: 2px solid #fff;
+          background-color: transparent;
+          color: #eeeeee;
+          text-transform: capitalize;
+          padding: 9px 2rem 7px;
+          margin-bottom: 10px;
+
+          &::placeholder {
+            color: #fff;
+            opacity: 1;
+          }
+
+          &:focus {
+            border-color: $secondary;
+            outline: none;
+          }
+        }
+
+        &-name {
+        }
+
+        &-email {
+        }
+
+        &-services {
+          padding-inline: 1.5rem 3rem;
+
+          .services__item {
+            @include fontControl(14px, 1.8rem, 0, 300);
+            color: $primary;
+            padding-block: 10px;
+
+            &:not(:last-child) {
+              border-bottom: 1px dashed #625958;
+            }
+          }
+        }
+
+        &-message {
+        }
+
+        &-btn {
+          @include fontControl(14px, 1.8rem, 0, 500);
+          display: block;
+          color: $white;
+          border: none;
+          padding: 1.5rem 3rem;
+          margin-top: 3.5rem;
+          border-radius: 3rem;
+          text-transform: uppercase;
+          background-color: $secondary;
+
+          &:hover {
+            background-color: #b28c62;
+          }
+        }
+      }
+
+      @include breakpoint(1200) {
+        grid-area: 3 / 3 / span 1 / span 2;
+      }
+
+      @include breakpoint(992) {
+        grid-area: 4 / 1 / span 1 / span 4;
+      }
+
+      @include breakpoint(768) {
+        grid-area: 5 / 1 / span 1 / span 4;
+      }
+    }
+
+    @include breakpoint(1200) {
+      grid-template-rows: 40% 30% 60%;
+    }
+
+    @include breakpoint(992) {
+      grid-template-rows: 40% 40% 60% 80%;
+    }
+
+    @include breakpoint(768) {
+      grid-template-rows: 40% 40% 30% 50% 60%;
+    }
+  }
+}
+
+#video-popup-container {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  width: 60%;
+  left: 50%;
+  margin-left: -30%;
+  top: 20%;
+  background-color: #fff;
+}
+
+#video-popup-close {
+  cursor: pointer;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  z-index: 998;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 12px;
+  background-color: #000;
+  line-height: 25px;
+  color: #fff;
+}
+
+#video-popup-iframe-container {
+  position: absolute;
+  z-index: 997;
+  width: 100%;
+  padding-bottom: 56.25%;
+  border: 2px solid #000;
+  border-radius: 2px;
+  background-color: #000;
+}
+
+#video-popup-iframe {
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #000;
+}
+
+#video-popup-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  background-color: #000;
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+}
+
+#video-popup-close:hover {
+  color: #de0023;
+}

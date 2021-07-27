@@ -1,0 +1,88 @@
+
+mixin renderButton(data)
+    //- data
+            href: href cua the a --> co dinh nghia href thi dung the a, k co thi dung the button
+            class: dinh nghia class cua the button hoac the a
+            id: dinh nghia id cua the button hoac the a
+            target: dinh nghia target cua the a khi click vao link
+            type: button/submit -->  dinh nghia type cua the button
+            dataToggle: data-toggle --> dung cho component tabbar or  collapse
+            dataTarget: data-target --> dung cho component tabbar or  collapse
+            activeIcon: + data-active-icon --> chi dung cho component tabbar or  collapse
+                        + thay doi icon cho button khi tabbar or  collapse active
+                        + chi ho tro cho fontawesome icon
+            inactiveIcon: + data-inactive-icon --> dung cho component tabbar or  collapse
+                          + thay doi icon cho button khi tabbar or  collapse inactive
+                          + chi ho tro cho fontawesome icon
+            activeClass: + data-active-class --> dung cho component tabbar or  collapse
+                         + thay doi style cho icon  khi tabbar or  collapse active
+            inactiveClass: + data-inactive-class --> dung cho component tabbar or  collapse
+                           + thay doi style cho icon  khi tabbar or  collapse inactive
+            iconRight: true/false --> icon ben trai hay phai
+            text: {} --> dinh nghia cho  component text
+            iconImage: {} --> dinh nghia cho  component iconImage
+    if data
+        if data.href || data.isLink
+            a.button-component( class=`${data.class  ? data.class: ''}` 
+                href=data.href
+                target=data.target 
+                data-toggle=data.dataToggle 
+                data-target=data.dataTarget
+                data-active-icon=data.activeIcon
+                data-inactive-icon=data.inactiveIcon
+                data-active-class=data.activeClass
+                data-inactive-class=data.inactiveClass
+                data-filter=data.dataFilter
+                id=data.id)
+                //-  text + icon
+                if data.iconRight
+                    +renderText(data.text)
+                    +renderIconImage(data.iconImage)
+                else 
+                   
+                    +renderText(data.text)
+                    if data.custombutton 
+                       p(class=`${data.className}`)=data.nameCustom
+                    if data.loop
+                        -let i = 0 
+                        while i < (data.loop - 1)
+                            -i++
+                            +renderText(data.text)
+                       
+                   
+        else if data.sale 
+            span.sale__text.position-absolute(class=`${data.class}`)=data.sale    
+        else 
+            button(class=` ${data.class}` 
+                    type=data.type
+                    data-toggle=data.dataToggle 
+                    data-target=data.dataTarget 
+                    data-active-icon=data.activeIcon
+                    data-inactive-icon=data.inactiveIcon
+                    data-active-class=data.activeClass
+                    data-inactive-class=data.inactiveClass
+                    data-filter=data.dataFilter
+                    id=data.id)
+                //-  text + icon
+                if data.iconRight
+                    +renderText(data.text)
+                    +renderIconImage(data.iconImage)
+                else 
+                    +renderIconImage(data.iconImage)
+                    +renderText(data.text)
+
+//- sample
+
+//- +renderButton({
+//-     href:'#',
+//-     text: {text: 'TextName'},
+//-     iconImage: {name: 'fa fa-user'}
+//- })
+
+//- +renderButton({
+//-     iconRight: true,
+//-     text: {text: 'TextName'},
+//-     iconImage: {
+//-         name: 'fa fa-user',
+//-     }
+//- })

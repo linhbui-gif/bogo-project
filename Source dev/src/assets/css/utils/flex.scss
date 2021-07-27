@@ -1,0 +1,52 @@
+@mixin util-flex($width-name) {
+  // direction
+  @each $name in $utils-flex-direction-list {
+    .#{$acr-flex}#{$width-name}-#{$name} {
+      flex-direction: $name;
+    }
+  }
+  // wrap
+  @each $name in $utils-flex-wrap-list {
+    .#{$acr-flex}#{$width-name}-#{$name} {
+      flex-wrap: $name;
+    }
+  }
+  // justify-content
+  @each $name in $utils-justify-content-list {
+    .#{$acr-justify-content}#{$width-name}-#{$name} {
+      @if ($name == "start" or $name == "end") {
+        justify-content: flex-#{$name};
+      } @else if ($name == "between") {
+        justify-content: space-between;
+      } @else {
+        justify-content: $name;
+      }
+    }
+  }
+  // align-items
+  @each $name in $utils-align-items-list {
+    .#{$acr-align-items}#{$width-name}-#{$name} {
+      @if ($name == "start" or $name == "end") {
+        align-items: flex-#{$name};
+      } @else {
+        align-items: $name;
+      }
+    }
+  }
+  // flex-grow
+  @each $name in $utils-flex-grow-list {
+    .#{$acr-flex}-grow#{$width-name}-#{$name} {
+      flex-grow: $name;
+    }
+  }
+}
+@each $width-num, $width-name in $minwidth-media {
+  @if ($width-num == "") {
+    @include util-flex($width-name);
+  } @else {
+    // reponsive
+    @include min-breakpoint($width-num) {
+      @include util-flex($width-name);
+    }
+  }
+}

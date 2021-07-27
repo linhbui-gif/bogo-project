@@ -1,0 +1,481 @@
+mixin Title(text)
+    br
+    br
+    br
+    br
+    br
+    H1.ml-5=text
+    br
+    br
+
+
+
+
+
+//- 1. Navigation
++Title("- Navigation")
+.container.border.py-5
+    +renderNavigation({ 
+            items:[
+                [
+                    {   
+                        type:"iconImage",
+                        values:{
+                            linkWrapper:{href: "#", class:"navbar-brand"},
+                            class:"navbar",
+                            isImage: true,
+                            src: './assets/images/logo-square.png',
+                        alt:"test" }
+                    }, 
+                    {
+                        type: 'button', 
+                        colClass:"btn-toogler flex-grow-1 d-flex align-items-center justify-content-end ",
+                        values: { iconImage: {name: 'fas fa-bars'}}
+                    },
+                    {
+                        type: 'itemList', 
+                        colClass:"navbar-menu flex-grow-1 d-flex align-items-center justify-content-end ",
+                        values: {
+                            class:"navbar__list d-flex ",
+                            items:[
+                                {class:"nav-item", button: {  class: 'w-100 border-0  hover-bg-blue hover-text-white', href:'#', text: {text: 'item1'}}},
+                                {class:"nav-item", button: {  class: 'w-100 border-0 hover-bg-blue hover-text-white', href:'#', text: {text: 'item1'}}},
+                                {class:"nav-item", button: {  class: 'w-100 border-0 hover-bg-blue hover-text-white', href:'#', text: {text: 'item1'}}},
+                                {class:"nav-item", button: {  class: 'w-100 border-0 hover-bg-blue hover-text-white', href:'#', text: {text: 'item1'}}},
+                                {class:"nav-item", button: {  class: 'w-100 border-0 hover-bg-blue hover-text-white', href:'#', text: {text: 'item1'}}},
+                            ]
+                        }
+                    },
+                    {
+                        type: 'button', 
+                        colClass:"d-flex align-items-center",
+                        values: {href: "#", text:{text:"Add Properties"}, iconImage: {name: 'fas fa-plus-circle'}}
+                    },
+                    
+                ],
+            ]
+    })
+
+
+//- ============================================================================================
+//- 2. Carousel
++Title("- Carousel")
+.container.border.py-5
+    +renderCarousel({
+                    id: "test",
+                    items:[
+                            { 
+                                class: 'border  p-4',
+                                cardImageBlock: {
+                                                class: 'overflow-hidden w-100',
+                                                iconImage: {src: 'assets/images/product_1.png', class: ''},
+                                                content: {
+                                                    class: 'w-100',
+                                                    items: [[{type: 'text', values: {text: 'text1', class: '', type: 'desc'}}]]
+                                                }
+                                },
+                                cardDescBlock: {
+                                    text: {text: 'Horizontal, button, icon, text', type: 'header'},
+                                    content: {
+                                            class: 'w-100',
+                                            items: [[{type: 'text', values: {text: 'text1', class: '', type: 'desc'}}],]
+                                            }
+                                }
+                            }, 
+                            { 
+                                class: 'border  p-4',
+                                cardImageBlock: {
+                                                class: 'overflow-hidden w-100',
+                                                iconImage: {src: 'assets/images/product_1.png', class: ''},
+                                                content: {
+                                                    class: 'w-100',
+                                                    items: [[{type: 'text', values: {text: 'text1', class: '', type: 'desc'}}]]
+                                                }
+                                },
+                                cardDescBlock: {
+                                    text: {text: 'Horizontal, button, icon, text', type: 'header'},
+                                    content: {
+                                            class: 'w-100',
+                                            items: [[{type: 'text', values: {text: 'text1', class: '', type: 'desc'}}],]
+                                            }
+                                }
+                            }, 
+                            { 
+                                class: 'border  p-4',
+                                cardImageBlock: {
+                                                class: 'overflow-hidden w-100',
+                                                iconImage: {src: 'assets/images/product_1.png', class: ''},
+                                                content: {
+                                                    class: 'w-100',
+                                                    items: [[{type: 'text', values: {text: 'text1', class: '', type: 'desc'}}]]
+                                                }
+                                },
+                                cardDescBlock: {
+                                    text: {text: 'Horizontal, button, icon, text', type: 'header'},
+                                    content: {
+                                            class: 'w-100',
+                                            items: [[{type: 'text', values: {text: 'text1', class: '', type: 'desc'}}],]
+                                            }
+                                }
+                            }, 
+                    
+                        ]
+                    })
+
+
+//- ============================================================================================
+//- 3. Cards
++Title("- Cards")
+.container.border.py-5
+    .row 
+        .col-6
+            +renderCardType1( { iconClass: 'pe-7s-phone', 
+                            title: 'fully responsive', 
+                            desc: 'Kanter is fully responsive, you can view it also in the mobile/tablets devices and it looks very in more devices.', 
+                            bgColor: 'bg-black-9' } )
+        .col-3
+            +renderCardType2( { iconClass: 'pe-7s-graph', 
+                            title: 'branding', 
+                            desc: 'Claritas est etiam processus dynamicus, qui sequitur.', 
+                            active: false } )
+        .col-3
+            +renderCardType2( { iconClass: 'pe-7s-graph', 
+                            title: 'branding', 
+                            desc: 'Claritas est etiam processus dynamicus, qui sequitur.', 
+                            active: true } )
+        .col-3 
+            +renderCardType3( { iconClass: 'pe-7s-config',
+                                title: "we have magic", 
+                                desc: 'We find the best ideas for you'} )
+        .col-3 
+            +renderCardType4( { iconClass: 'pe-7s-comment',
+                                title: '1. discuss'} )
+        .col-6 
+            +renderCardType5( { iconClass: 'pe-7s-target',
+                                title: 'web ', subTitle: 'development', 
+                                desc: 'Praesent sodales, quam vitae gravida interdum, ex mi bibendum enim, sit amet tristique mi quam vel odio. Donec non nunc condimentum.drerit elit sed, condimentum magna. Suspendisse imperdiet purus vel drerit elit sed, condimentum magna. Suspendisse imperdiet purus vel'} )
+        .col-3
+            +renderCardType6( { iconClass: 'pe-7s-look', line: true,
+                                title: 'awesome', 
+                                desc: 'Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.'} )
+        .col-3
+            +renderCardType6( { iconClass: 'pe-7s-look', 
+                                title: 'awesome', 
+                                desc: 'Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.'} )
+        .col-4
+            +renderCardType7( { src: 'https://fidex.com.ua/monster/kanter/demos/img/team4.jpg', 
+                                link: { facebook: '#', twitter: '#', skype: '#', linkedin: '#'},
+                                name: 'gina fernando', 
+                                position: 'Manager of Marketing', 
+                                desc: 'She is a marketing manager of our company, she bring to high..'} )
+        .col-4 
+            +renderCardType8( { src: 'https://fidex.com.ua/monster/kanter/demos/img/ava3.jpg',
+                                desc: 'Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum',
+                                name: 'albin erlend', 
+                                position: 'Programmer, Company name'} )
+        .col-12 
+            +renderTitle( { line: true, 
+                            title: 'about', subTitle: 'us', 
+                            brief: 'we create', subBrief: 'awesome stuff', 
+                            desc: 'Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum'})
+        .col-12 
+            +renderTitle( { line: true,
+                            left: true, 
+                            medium: true,
+                            title: 'about', subTitle: 'us', 
+                            brief: 'we create', subBrief: 'awesome stuff', 
+                            desc: 'Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum'})
+    br
+    br
+
+
+//- ============================================================================================
+//- 4. Button
++Title("- Button")
+.container.border.py-5
+    +renderButton({
+        href:'#',
+        text: {text: 'TextName'},
+        iconImage: {name: 'fa fa-user'}
+    })
+
+    +renderButton({
+        iconRight: true,
+        text: {text: 'TextName'},
+        iconImage: {
+            name: 'fa fa-user',
+        }
+    })
+
+
+//- ============================================================================================
+//- 5. Collapse
++Title("- Collapse")
+.container.border.py-5
+    +renderCollapse({
+        button: {
+            class: 'p-2 fs-15 w-25 icon border-0',
+            text: {text: 'Menu Collapse'},
+            activeIcon: 'fas fa-circle',
+            inactiveIcon: 'far fa-circle',
+            activeClass: 'text-blue',
+            inactiveClass: 'text-gray',
+            dataToggle: 'collapse',
+            iconRight: true,
+            iconImage: {
+                name: 'far fa-circle',
+            }
+        },
+        content: {
+            id: 'collapId1',
+            class: 'w-100 collapse',
+            items: [
+                        [
+                            {type: 'text', colClass: '', values: {text: 'Menu Collapse', class: 'border', type: 'desc'}}, 
+                            {type: 'iconImage', colClass: '', values: {name: 'far fa-circle'}}, 
+                            {type: 'input', values: {input: {value: 'default'}}}, 
+                            
+                        ],
+                        [
+                            {type: 'button', colClass: '', values: {href:'#', text: {text: 'TextName', subText: 'subText'}, iconImage: {name: 'fa fa-user'}}}
+                        ]
+                    ]
+        }   
+        
+    })
+
+
+//- ============================================================================================
+//- 6. Input
++Title("- Input")
+.container.border.py-5
+    +renderInput({iconRight: true,  
+            class: 'mb-2 ml-2 rounded-2',
+            input: {value: 'iconright', class: 'border-none'},
+            iconImage: {name: 'fas fa-search', class: 'text-orange'},
+            })
+    br
+    br
+    +renderInput({class: 'mb-2 ml-2 rounded-2',
+                input: {placeholder: 'iconleft', class: 'border-none'},
+                iconImage: {name: 'fas fa-search', class: 'text-orange'},
+                })
+    br
+    br
+    +renderInput({input: {value: 'default'}})
+    br
+    br
+    +renderInput({class: 'mb-2 ml-2 rounded-2',
+                input: {placeholder: 'type password', type: 'password', class: 'border-none'},
+                iconImage: {name: 'fas fa-search', class: 'text-orange'},
+                })
+    br
+    br
+
+
+//- ============================================================================================
+//- 7. Select Option
++Title("- Select Option")
+.container.border.py-5
+    br
+    br
+    -
+        var listData = [{id:'test1', 
+                        class:'w-25 p-3 rounded-2 mb-1', 
+                        options: [
+                                {value: '1', selected:true, text:'text1'}, 
+                                {value: '2', text:'text2'}]
+                        },
+                        { id:'disable', 
+                        disabled: true, 
+                        class:'w-25 text-red p-3 rounded-2  mb-1', 
+                        options:[
+                                {value: '1', text:'text1'}, 
+                                {value: '2', text:'disable', selected:true}]}]
+    each data in listData
+        +renderSelect(data)
+        br
+
+
+//- ============================================================================================
+//- 8. Tabbar
++Title("- Tabbar")
+.container.border.py-5
+    div.w-50
+        +renderTabbar({
+            class: 'border  p-4',
+            tabbarMenuBlock: {
+                            class: '',
+                            
+                            itemList: {
+                                class:"d-flex flex-wrap",
+                                items:[{class:"", button: {  class: 'w-100 hover-bg-blue hover-text-white ', dataToggle: 'tabbar__collapse', dataTarget: '#tab1',  text: {text: 'item1'}}},
+                                    {class:"", button: {  class: 'w-100 hover-bg-blue hover-text-white active', dataToggle: 'tabbar__collapse', dataTarget: '#tab2', text: {text: 'item2'}}},
+                                    {class:"", button: {  class: 'w-100 hover-bg-blue hover-text-white ', dataToggle: 'tabbar__collapse', dataTarget: '#tab3', text: {text: 'item3'}}},
+                                    {class:"", button: {  class: 'w-100 hover-bg-blue hover-text-white ', dataToggle: 'tabbar__collapse', dataTarget: '#tab4', text: {text: 'item4'}}}
+                                    ]
+                            }
+                        },
+            tabbarContentBlock: [
+                {
+                    content: {
+                            id: 'tab1',
+                            class: 'w-100 bg-gray tabbar__collapse',
+                            items: [
+                                        [
+                                            {type: 'text', colClass: 'w-100 p-6 border', values: {text: 'Tab Content1', class: '', type: 'desc'}}, 
+                                        ]
+                                    ]
+                        }
+                },
+                {
+                    content: {
+                            id: 'tab2',
+                            class: 'w-100 tabbar__collapse show',
+                            items: [
+                                        [
+                                            {type: 'text', colClass: 'w-100 p-6 border', values: {text: 'Tab Content2', class: '', type: 'desc'}}, 
+                                        ]
+                                    ]
+                        }
+                },
+                {
+                    content: {
+                            id: 'tab3',
+                            class: 'w-100 bg-gray tabbar__collapse',
+                            items: [
+                                        [
+                                            {type: 'text', colClass: 'w-100 p-6 border', values: {text: 'Tab Content3', class: '', type: 'desc'}}, 
+                                        ]
+                                    ]
+                        }
+                },
+                {
+                    content: {
+                            id: 'tab4',
+                            class: 'w-100 tabbar__collapse',
+                            items: [
+                                        [
+                                            {type: 'text', colClass: 'w-100 p-6 border', values: {text: 'Tab Content4', class: '', type: 'desc'}}, 
+                                        ]
+                                    ]
+                        }
+                },
+            ]
+        })
+        br
+        br
+
+
+//- //- ============================================================================================
+//- //- 9. Modal
+//- +Title("- Modal")
+//- .container.border.py-5
+//-     +renderModal([
+//-         { 
+//-             class: 'border  p-4',
+//-             cardImageBlock: {
+//-                             class: 'overflow-hidden w-100',
+//-                             iconImage: {src: 'assets/images/product_1.png', class: ''},
+//-                             content: {
+//-                                 class: 'w-100',
+//-                                 items: [
+//-                                             [{type: 'text', values: {text: 'text1', class: '', type: 'desc'}}]
+                                        
+//-                                         ]
+//-                             }
+//-                         },
+//-             cardDescBlock: {
+//-                 text: {text: 'Horizontal, button, icon, text', type: 'header'},
+//-                 content: {
+//-                         class: 'w-100',
+//-                         items: [
+//-                                     [{type: 'text', values: {text: 'text1', class: '', type: 'desc'}}],
+//-                                     [
+//-                                         {type: 'iconImage', values: {class: 'text-blue', name: 'fas fa-star'}}, 
+//-                                         {type: 'iconImage', values: {class: 'text-blue', name: 'fas fa-star'}}, 
+//-                                     ],
+//-                                     [
+//-                                         {type: 'text', values: {text: 'text1', class: '', type: '',subText:"aaaa", subClass:"text-red"}},
+//-                                         {type: 'text', values: {text: 'text1', class: '', type: '', subText:"aaaa"}}
+//-                                     ]
+//-                                 ]
+//-                     }
+//-             }
+//-         } , {
+//-             class: 'border p-4',
+//-             isVertical: true,
+//-             cardImageBlock: {
+//-                             class: 'overflow-hidden col-4 h-100-px',
+//-                             iconImage: {src: 'assets/images/product_1.png'},
+//-                         },
+//-             cardDescBlock: {
+//-                 class: 'w-50 col-8',
+//-                 text: {text: 'Vertical, button, icon, text', type: 'header'},
+//-                 content: {
+//-                         class: 'w-100',
+//-                         items: [
+//-                                     [{type: 'text', values: {text: 'Text1', type: 'desc'}},
+//-                                     {type: 'text', values: {text: 'Text2', type: 'desc'}}],
+//-                                     [
+//-                                         {type: 'iconImage', values: {class: 'text-blue', name: 'fas fa-star'}}, 
+//-                                         {type: 'iconImage', values: {class: 'text-blue', name: 'fas fa-star'}}, 
+//-                                     ],
+//-                                     [
+//-                                         {type: 'button', values: {href:'#', class: 'd-block', text: {text: 'Gia 1'}}},
+//-                                         {type: 'button', values: {href:'#', class: 'd-block', text: {text: 'Gia 2'}}}
+//-                                     ]
+//-                                 ]
+//-                     }
+//-             }
+//-         }, {
+//-             class: 'border  p-4',
+//-             cardImageBlock: {
+//-                             class: 'overflow-hidden w-100 h-100-px',
+//-                             iconImage: {src: 'assets/images/product_1.png', class: ''},
+//-                         },
+//-             cardDescBlock: {
+//-                 text: {text: 'Card + Image', type: 'header'},
+//-             }
+//-         }
+//-      ])
+//-     +renderButton( { text: {text: 'Modal'}, class: 'modalTest' })
+
+
+//- ============================================================================================
+//- 10. Item List
++Title("- Item List")
+.container.border.py-5
+    +renderItemList({
+        class:"d-flex flex-wrap w-25",
+        items:[
+            {class:"w-100", button: {  class: 'w-100 hover-bg-blue hover-text-white', href:'#', iconImage: {name: 'fa fa-user'}, text: {text: 'item2'}}},
+            {class:"w-100", button: {  class: 'w-100 hover-bg-blue hover-text-white', href:'#', iconImage: {name: 'fa fa-user'}, text: {text: 'item3'}}},
+            {class:"w-100", button: {  class: 'w-100 hover-bg-blue hover-text-white', href:'#', iconImage: {name: 'fa fa-user'}, text: {text: 'item4'}}},
+            {class:"w-100", button: {  class: 'w-100 hover-bg-blue hover-text-white', href:'#', iconImage: {name: 'fa fa-user'}, text: {text: 'item5'}}},
+            ]
+        })
+
+
+//- ============================================================================================
+//- 10. CheckBox
++Title("- CheckBox")
+.container.border.py-5
+    br
+    -
+        var listData = [{text: {text: 'Default with label only'}, id:'11', name: '11', value:'sss'},
+                        {isCheck: true, checked: true, text: {text: 'heart icon'}, checkIcon: 'fas fa-heart', checkClass: 'text-red', uncheckIcon: 'far fa-heart', uncheckClass: 'text-gray'},
+                        {disabled: true, checked: true, text: {text: 'Disable'}, checkIcon: 'fas fa-heart', checkClass: 'text-red', uncheckIcon: 'far fa-heart', uncheckClass: 'text-gray'},
+                        {text: {text: 'Test'}, checkIcon: 'fas fa-minus-square', checkClass: 'text-red', uncheckIcon: 'far fa-minus-square', uncheckClass: 'text-gray'},
+                        {id: 'test_id', name: 'test_name', value: 'test_value'}]
+
+    each data in listData
+        +renderCheckbox(data)
+        br
+    br
+
+br
+br
+br
+br
+br

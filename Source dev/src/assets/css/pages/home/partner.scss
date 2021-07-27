@@ -1,0 +1,56 @@
+section.our-client{
+
+    overflow: hidden;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    position: relative;
+    background-color: #c69c6d;
+    .carousel-item{
+        img {
+            position: relative;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 185px;
+            height: 31px;
+        }
+    }
+
+    .control-carousel-client{
+        .wrapper-pre, .wrapper-next{
+            position: absolute;
+            top: 35%;
+            i{
+                font-size:35px;
+                background: #fff;
+                padding: 10px;
+                opacity: 0.4;
+                transition: opacity linear .3s;
+                border:none;
+                outline: none;
+                cursor: pointer;
+                &:hover {
+                    opacity: 1;
+                }
+
+            }
+        }
+
+        .wrapper-pre{
+            left: 0;
+            transform: translateX(-60px);
+            transition: all ease-in-out .3s;
+        }
+        .wrapper-next{
+            right: 0;
+            transform: translateX(60px);
+            transition: all ease-in-out .3s;
+        }
+    }
+    &:hover{
+        .wrapper-pre, .wrapper-next{
+            transform: translateX(0px);
+        }
+    
+    }
+}

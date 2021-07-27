@@ -1,0 +1,41 @@
+.button-component {
+    padding: 1.3rem 5.3rem;
+    font-size: 14px;
+    
+   &.background-white{
+    background-color: #ffffff;
+   }
+   &.border{
+    border: solid 1px #a2a2a2;
+   }
+   &.background-blue{
+    background-color: #139be8;
+   }
+   &.color-white{
+       span{
+        color: white;
+       } 
+   }
+   &.custom-hover-button{
+       
+   }
+}
+.sale__text{
+    top: 0;
+    padding: 2px 15px 4px 9px;
+    color: white;
+    border-radius: 5px;
+    @include fontControl(14px, 2.43);
+    left: 23px;
+    top: 27px;
+    &.orange{
+        background-color: #f59a20;
+    }
+    &.green{
+        background-color: #76bcbb;
+    }
+    &.position-static{
+        position: static;
+    }
+
+}

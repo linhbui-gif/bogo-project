@@ -1,0 +1,109 @@
+@keyframes serviceCardHoverIn{
+  from {
+      transform: scale(3.5);
+      opacity: 0.7;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0.9;
+  }
+}
+.services__services {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  & .container {
+    & .services__services-top {
+      & .top__heading {
+      }
+    }
+    & .services__services-card {
+      & .card__wrapper {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        & .overlayIcon {
+          display: flex;
+          @include positionControl(absolute, 0, 0, 0, 0);
+          background: black;
+          color: white;
+          opacity: 0.7;
+          justify-content: center;
+          align-items: center;
+          font-size: 10rem;
+          
+        }
+        &:hover .overlayIcon  {
+          transform: scale(1.5);
+          opacity: 0.9;
+          -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+          -webkit-animation-name: serviceCardHoverIn;
+          animation-name: serviceCardHoverIn;
+        }
+        & .blurIcon {
+          display: flex;
+          @include positionControl(absolute, 0, 0, 0, 0);
+          color: white;
+          background-color: transparent;
+          justify-content: center;
+          align-items: center;
+          & i {
+            opacity: 0.02;
+            font-size: 35rem;
+            transform: translateX(0);
+            transition: 1s ease;
+            visibility: visible;
+          }
+        }
+        &:hover .blurIcon i {
+          transform: translateX(200%);
+          font-size: 10rem;
+          opacity: 1;
+          transition: 0s ease;
+          visibility: hidden;
+        }
+        & .card__wrapper-imageBlock {
+          height: 28rem;
+          position: relative;
+          overflow: hidden;
+          & img {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+          
+          
+        }
+        & .card__wrapper-contentBlock {
+          padding: 3rem;
+          background-color: #f5f5f5;
+          & .contentBlock__title {
+            font-size: 2rem;
+            line-height: 2rem;
+            margin-top: 0;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            & .contentBlock__title-main {
+            }
+            & .contentBlock__title-sub {
+              color: $secondary;
+            }
+          }
+          & .contentBlock__desc {
+            font-size: 14px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            color: #606060;
+            line-height: 1.6;
+            font-family: "Poppins", sans-serif;
+            letter-spacing: 0.7px;
+            font-weight: 300;
+            margin-bottom: 4rem;
+          }
+        }
+      }
+    }
+  }
+
+}

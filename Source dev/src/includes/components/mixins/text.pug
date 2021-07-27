@@ -1,0 +1,46 @@
+mixin renderText(data)
+    //- data
+            class: dinh nghia class cua khoi noi dung chinh
+            text: dinh nghia id cua khoi noi dung chinh
+            id: dinh nghia id cua khoi noi dung chinh
+            subClass: dinh nghia class cua khoi noi dung phu
+            subText: dinh nghia id cua khoi noi dung phu
+            subId: dinh nghia id cua khoi noi dung phu
+            type: kiem tra xem nen dung the nao p, span, label hay header
+            header: loai header 1-6 (voi type la 'header')
+
+
+    if data
+        case data.type
+            when 'desc'
+                p(class=`p-2 ${data.class ? data.class: ''}` id=data.id)= data.text
+                if data.subText
+                    span(class=`p-2 ${data.subClass ? data.subClass: ''}` id=data.subId)= data.subText
+            when 'label'
+                label(class=`p-2 ${data.class ? data.class: ''}` id=data.id for=data.label)= data.text 
+                if data.subText
+                    span(class=`p-2 ${data.subClass ? data.subClass: ''}` id=data.subId)= data.subText
+            when 'header'
+                case data.header
+                    when  '1'
+                        h1(class=`${data.class ? data.class: ''}` id=data.id)= data.text
+                    when  '2'
+                        h2(class=`${data.class ? data.class: ''}` id=data.id)= data.text
+                    when  '3'
+                        h3(class=`${data.class ? data.class: ''}` id=data.id)= data.text
+                    when  '4'
+                        h4(class=`${data.class ? data.class: ''}` id=data.id)= data.text
+                    when  '5'
+                        h5(class=`${data.class ? data.class: ''}` id=data.id)= data.text
+                    when  '6'
+                        h6(class=`${data.class ? data.class: ''}` id=data.id)= data.text
+                    default 
+                        h1(class=`${data.class ? data.class: ''}` id=data.id)= data.text
+                
+                
+            default
+                if data.icon 
+                   i.fa.fa-bars
+                span(class=` ${data.class ? data.class: ''}` id=data.id)= data.text
+                if data.subText
+                    span(class=` ${data.subClass ? data.subClass: ''}` id=data.subId)= data.subText

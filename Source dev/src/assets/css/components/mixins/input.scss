@@ -1,0 +1,12 @@
+.input-component{
+    padding: 10px 15px;
+    border: solid 1px #d5dfe9;
+    &.radius{
+        border-radius: 30px;
+    }
+    .icon-search{
+        i{
+            font-size: 16px;
+        }
+    }
+}

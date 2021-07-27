@@ -1,0 +1,15 @@
+<svg id="alarm_black_24dp" xmlns="http://www.w3.org/2000/svg" width="14.063" height="14.063" viewBox="0 0 14.063 14.063">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #a2a2a2;
+      }
+    </style>
+  </defs>
+  <path id="Path_241" data-name="Path 241" class="cls-1" d="M0,0H14.063V14.063H0Z"/>
+  <path id="Path_242" data-name="Path 242" class="cls-2" d="M13.719,4.122l-2.7-2.262-.756.9,2.7,2.262ZM5.445,2.757l-.75-.9L2,4.116l.756.9,2.69-2.256Zm2.707,2.7H7.274V8.973l2.783,1.67.439-.721L8.153,8.534ZM7.86,3.114a5.274,5.274,0,1,0,5.274,5.274A5.274,5.274,0,0,0,7.86,3.114Zm0,9.375a4.1,4.1,0,1,1,4.1-4.1A4.1,4.1,0,0,1,7.86,12.489Z" transform="translate(-0.828 -0.77)"/>
+</svg>

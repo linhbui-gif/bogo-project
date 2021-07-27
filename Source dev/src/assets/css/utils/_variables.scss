@@ -1,0 +1,154 @@
+// reponsive
+$minwidth-media: ("", ""),
+(576, -sm),
+(768, -md),
+(992, -lg),
+(1200, -xl);
+// Grid-layout
+$grid-columns: 12;
+$grid-breakpoints: ( xs: 0, sm:576, md: 768px, lg: 992px, xl: 1200px);
+$container-max-widths: (sm:540, md: 720px, lg: 960px, xl: 1140px);
+$enable-grid-classes: true;
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+// color
+$utils-color-mapping: (blue, $blue),
+(dark-blue, $dark-blue),
+(indigo, $indigo),
+(purple, $purple),
+(pink, $pink),
+(red, $red),
+(orange, $orange),
+(yellow, $yellow),
+(green, $green),
+(cyan, $cyan),
+(white, $white),
+(black, $black),
+(gray, $gray),
+(gray-dark, $gray-dark),
+(black, $black),
+(disable, $disable),
+(primary, $primary),
+(secondary, $secondary),
+(third, $third),
+(transparent, transparent);
+// border
+$utils-border-edges: "",
+top,
+right,
+bottom,
+left;
+$utils-default-radius: 0.5rem;
+$utils-border-radius: ("", ""),
+(0, 0),
+(1, 0.25rem),
+(2, 0.5rem),
+(3, 0.75rem),
+(4, 1rem),
+(circle, 50%);
+// text
+$utils-text-align-list: left,
+right,
+center;
+$utils-text-weight-list: 300,
+400,
+500,
+600,
+700,
+800,
+900,
+bold;
+$utils-font-size-list: (10, 1rem),
+(13, 1.3rem),
+(15, 1.5rem),
+(17, 1.7rem),
+(20, 2rem);
+$utils-line-height-list: (1, 1),
+(1px, 1.5);
+// display, position
+$utils-display-list: none,
+inline,
+inline-block,
+block,
+inline-flex,
+flex;
+$utils-overflow-list: hidden,
+auto,
+unset;
+$utils-position-list: relative,
+absolute,
+fixed;
+$utils-position-fixed-z-index: 1000;
+$utils-position-fixed-list: top,
+bottom,
+full;
+// width, height, 
+$utils-sizing-list: (0, 0),
+(25, 25%),
+(50, 50%),
+(75, 75%),
+(100, 100%),
+(25-px, 25px),
+(50-px, 50px),
+(75-px, 75px),
+(100-px, 100px);
+// margin, padding
+$utils-spacing-list: (0, 0),
+(1, 0.25rem),
+(2, 0.5rem),
+(3, 0.75rem),
+(4, 1rem),
+(5, 1.5rem),
+(6, 2rem),
+(auto, auto);
+// flex attr
+$utils-flex-grow-list: 0,
+1;
+$utils-align-items-list: start,
+end,
+center;
+$utils-flex-direction-list: row,
+column;
+$utils-flex-wrap-list: wrap,
+nowrap;
+$utils-justify-content-list: (start, end, between, center);
+// ACRONYMS: prefix of class
+$acr-background: "bg";
+$acr-border: "border";
+$acr-rounded: "rounded";
+$acr-text: "text";
+$acr-text-weight: "text-weight";
+$acr-font-size: "fs";
+$acr-line-height: "lh";
+$acr-hover: "hover";
+$acr-focus: "focus";
+$acr-cursor: "cursor";
+$acr-display: "d";
+$acr-overflow: "overflow";
+$acr-flex: "flex";
+$acr-justify-content: "justify-content";
+$acr-align-items: "align-items";
+$acr-position: "position";
+$acr-fixed: "fixed";
+$acr-width: "w";
+$acr-max-width: "mw";
+$acr-min-width: "mnw";
+$acr-height: "h";
+$acr-max-height: "mh";
+$acr-min-height: "mnh";
+$acr-margin: "m";
+$acr-margin-top: "mt";
+$acr-margin-bottom: "mb";
+$acr-margin-right: "mr";
+$acr-margin-left: "ml";
+$acr-margin-left-right: "mx";
+$acr-margin-top-bottom: "my";
+$acr-padding: "p";
+$acr-padding-top: "pt";
+$acr-padding-bottom: "pb";
+$acr-padding-right: "pr";
+$acr-padding-left: "pl";
+$acr-padding-left-right: "px";
+$acr-padding-top-bottom: "py";
+$acr-visible: "visible";
+$acr-invisible: "hidden";

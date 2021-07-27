@@ -1,0 +1,31 @@
+mixin renderIconImage(data)
+    //- data
+            src: source toi hinh anh --> key nay dung de check xem la dung image hay fontawesome
+            class: class cua icon hoac image
+            id: id cua icon hoac image
+            alt: alt cua image
+            name: ten class cua fontawesome
+    if data
+        if data.linkWrapper
+            a(class=`${data.linkWrapper.class ? data.linkWrapper.class : ""}` href=data.linkWrapper.href)
+                if data.linkWrapper.items
+                    each item in data.linkWrapper.items
+                        if item.src || item.isImage
+                            img(class=`${item.class ? item.class: ''}`
+                                alt=item.alt
+                                id=item.id
+                                src=item.src  
+                                )
+                        else
+                            span(class=`d-inline-flex justify-content-center align-items-center ${item.class ? item.class: ''}` id=item.id)
+                                i(class=`${item.name ? item.name: ''}`)
+        else 
+            if data.src || data.isImage
+                    img(class=`${data.class ? data.class: ''}`
+                        alt=data.alt
+                        id=data.id
+                        src=data.src  
+                        )
+            else
+                span(class=`d-inline-flex justify-content-center align-items-center ${data.class ? data.class: ''}` id=data.id)
+                    i(class=`${data.name ? data.name: ''}`) 

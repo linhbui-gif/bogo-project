@@ -1,0 +1,24 @@
+@mixin util-display($width-name) {
+    @each $name in $utils-display-list {
+        .#{$acr-display}#{$width-name}-#{$name} {
+            display: $name;
+        }
+    }
+}
+@each $width-num, $width-name in $minwidth-media {
+    @if ($width-num == '') {
+        @include util-display($width-name);
+    } @else {
+        // reponsive
+        @include min-breakpoint($width-num) {
+            @include util-display($width-name);
+        }
+    }
+    
+}
+
+@each $name in $utils-overflow-list {
+    .#{$acr-overflow}-#{$name} {
+        overflow: $name;
+    }
+}

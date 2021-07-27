@@ -1,0 +1,12 @@
+-let cardType8List = [{ src: 'https://fidex.com.ua/monster/kanter/demos/img/ava.jpg', desc: 'Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum', name: 'alex rezvova', position: 'Designer, Company name'}, { src: 'https://fidex.com.ua/monster/kanter/demos/img/ava2.jpg', desc: 'Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum', name: 'jacob kai', position: 'Creative Director, Company name'}, { src: 'https://fidex.com.ua/monster/kanter/demos/img/ava3.jpg', desc: 'Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum', name: 'albin erlend', position: 'Programmer, Company name'}, { src: 'https://fidex.com.ua/monster/kanter/demos/img/ava.jpg', desc: 'Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum', name: 'alex rezvova', position: 'Designer, Company name'}, { src: 'https://fidex.com.ua/monster/kanter/demos/img/ava2.jpg', desc: 'Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum', name: 'jacob kai', position: 'Creative Director, Company name'}, { src: 'https://fidex.com.ua/monster/kanter/demos/img/ava3.jpg', desc: 'Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum', name: 'albin erlend', position: 'Programmer, Company name'} ]
+
+.customer 
+    .container
+        .customer__wrapper.row.justify-content-center
+            .customer__wrapper-title.col-12.col-md-8
+                +renderTitle( { title: 'customers', subTitle: 'love us', line: true, medium: true, 
+                                desc: 'Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum'})
+            .customer__wrapper-list.col-12.owl-carousel.owl-theme#customer
+                each data in cardType8List
+                    .item
+                        +renderCardType8(data)

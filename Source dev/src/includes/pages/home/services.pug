@@ -1,0 +1,92 @@
+-
+    //- menu data
+    let datas = [
+        {iconName: 'pe-7s-graph', contentId: '#tab1', isActive: true, text: 'branding', subText: 'Claritas est etiam processus dynamicus, qui sequitur.'},
+        {iconName: 'pe-7s-drop', contentId: '#tab2', text: 'Web design', subText: 'Claritas est etiam processus dynamicus, qui sequitur.'},
+        {iconName: 'pe-7s-timer', contentId: '#tab3', text: 'Graphig design', subText: 'Claritas est etiam processus dynamicus, qui sequitur.'},
+        {iconName: 'pe-7s-map', contentId: '#tab4', text: 'Development', subText: 'Claritas est etiam processus dynamicus, qui sequitur.'},
+    ]
+    let itemsData = []
+    for (let idx = 0; idx < datas.length; idx++) {
+        let row = datas[idx];
+        itemsData.push({class:"itemList__item item", button: { isLink: true,  dataToggle: 'tabbar__collapse', dataTarget: row.contentId, class: `itemList__item-button ${row.isActive ? 'active': ''}`, iconImage: {name: row.iconName, class: 'button__icon'}, text: {class: 'button__text', subClass: 'button__subtext', text: row.text, subText: row.subText}}});
+    }
+
+    //- Content data
+
+ 
+
+.services 
+    .container 
+        .services__wrapper.row.justify-content-center
+            .services__wrapper-heading.col-lg-8
+                +renderTitle( {    title: 'our', subTitle: 'services',
+                            desc: 'Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum'})
+            .services__wrapper-content
+                .content__menu
+                    +renderItemList({
+                            class: 'itemList type1  owl-carousel',
+                            id: 'serviceList',
+                            items: itemsData
+                            })
+                -
+                    let itemListData = [
+                                    {class:"itemList__item", button: { isLink: true,  class: 'itemList__item-button', iconImage: {name: 'far fa-dot-circle', class: 'button__icon'}, text: {class: 'button__text', text: 'Rich media banners'}}},
+                                    {class:"itemList__item", button: { isLink: true,  class: 'itemList__item-button', iconImage: {name: 'far fa-dot-circle', class: 'button__icon'}, text: {class: 'button__text', text: 'Audio production'}}},
+                                    {class:"itemList__item", button: { isLink: true,  class: 'itemList__item-button', iconImage: {name: 'far fa-dot-circle', class: 'button__icon'}, text: {class: 'button__text', text: 'Photography'}}},
+                                    {class:"itemList__item", button: { isLink: true,  class: 'itemList__item-button', iconImage: {name: 'far fa-dot-circle', class: 'button__icon'}, text: {class: 'button__text', text: 'Design'}}},
+                                    {class:"itemList__item", button: { isLink: true,  class: 'itemList__item-button', iconImage: {name: 'far fa-dot-circle', class: 'button__icon'}, text: {class: 'button__text', text: 'Content creation'}}},
+                                    {class:"itemList__item", button: { isLink: true,  class: 'itemList__item-button', iconImage: {name: 'far fa-dot-circle', class: 'button__icon'}, text: {class: 'button__text', text: 'Rich media banners'}}},
+                                    {class:"itemList__item", button: { isLink: true,  class: 'itemList__item-button', iconImage: {name: 'far fa-dot-circle', class: 'button__icon'}, text: {class: 'button__text', text: 'Content audit'}}},
+                                    {class:"itemList__item", button: { isLink: true,  class: 'itemList__item-button', iconImage: {name: 'far fa-dot-circle', class: 'button__icon'}, text: {class: 'button__text', text: 'Technical requirements'}}},
+                                    {class:"itemList__item", button: { isLink: true,  class: 'itemList__item-button', iconImage: {name: 'far fa-dot-circle', class: 'button__icon'}, text: {class: 'button__text', text: 'Testing'}}},
+                                    {class:"itemList__item", button: { isLink: true,  class: 'itemList__item-button', iconImage: {name: 'far fa-dot-circle', class: 'button__icon'}, text: {class: 'button__text', text: 'and more...'}}},
+                                    ]
+                    let contentData = [
+                        {id: 'tab1', title: 'Never fall in love with an idea. They’re whores. If the the job, there’s always another.',
+                        text1: 'Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum',
+                        text2: 'Tab 1 Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris',
+                        itemListData: itemListData,
+                        isActive: true
+                        },
+                        {id: 'tab2', title: 'They’re whores. If the the job, there’s always another.',
+                        text1: 'Clarcessus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum',
+                        text2: 'Tab 1 Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris',
+                        itemListData: itemListData
+                        },
+                        {id: 'tab3', title: 'They’re whores. If the the job, there’s always another.',
+                        text1: 'Claritas est essus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum',
+                        text2: 'Tab rum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris',
+                        itemListData: itemListData
+                        },
+                        {id: 'tab4', title: 'They’re whores. If the the job, there’s always another.',
+                        text1: 'uam littera gothica, quam nunc putamus parum',
+                        text2: 'Tab 1 Proin elit arcu, rutula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris',
+                        itemListData: itemListData
+                        }
+
+                    ] 
+
+                each row in contentData 
+                    .content__body.tabbar__collapse.row(id=row.id class=`${row.isActive ? 'show': ''}`)
+                        .content__body-left.col-lg-7
+                            h2= row.title
+                            p= row.text1
+                            p= row.text2
+                        .content__body-right.col-lg-5
+                            +renderItemList({
+                                    class:"itemList type2",
+                                    items: row.itemListData
+                                    })
+            .services__wrapper-viewall 
+                +renderButton({
+                    iconRight: true,
+                    class: 'viewall__button',
+                    href: '#',
+                    text: {text: 'View all services', class: 'viewall__button-text'},
+                    iconImage: {
+                        name: 'fas fa-chevron-right', class: 'viewall__button-icon',
+                    }
+                })
+                            
+            

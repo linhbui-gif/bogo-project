@@ -1,0 +1,49 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title Kanter
+    //- Logo Icon
+    link(rel="shortcut icon" type="image/x-icon" href="")
+    //- OwlCarousel CSS
+    link(rel="stylesheet", href="assets/css/setting/libs/owl.carousel.min.css")
+    link(rel="stylesheet", href="assets/css/setting/libs/owl.theme.default.min.css")
+    link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css")
+
+
+
+    //- FontAwesome
+    //- link(rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous")
+    link(link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+    link(rel="stylesheet" href="assets/vendors/pe-icon-7-stroke/css/pe-icon-7-stroke.css" )
+    //- Font
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet")
+    //- Style CSS
+    link(rel="stylesheet" type="text/css" href="assets/css/main.css")
+  body.position-relative
+    include ../components/index.pug
+    include ./header.pug
+    
+    .overlay.position-absolute
+      //- đầu nối để lắp các thiết bị sau này 
+    block content  
+    include ./footer.pug
+    //- jQuery
+    script(src="assets/js/libs/jquery.min.js")
+    script(type="text/javascript" src="assets/js/libs/slick/slick.min.js")
+    //- Owl Carousel
+    <script src="assets/js/libs/owl.carousel.min.js"></script>
+    //- isotope
+    //- script(src="./assets/js/libs/isotope.pkgd.min.js")
+    //- Java Script
+    //- script(src='./assets/js/checkbox.js')
+    script(src='assets/js/collapse.js')
+    //- script(src='./assets/js/tabbar.js')
+    //- script(src='./assets/js/modal.js')
+    //- script(src='./assets/js/title.js')
+    //- script(src='./assets/js/isotope.js')
+    script( src='assets/js/main.js')

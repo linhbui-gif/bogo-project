@@ -1,0 +1,14 @@
+.new-smater {
+    padding:3.5rem 0;
+    background-color: #e6e7eb;
+    .news{
+        background-color: white;
+        &.custom-padding{
+            padding:1rem 0;
+            margin-bottom: 2rem;
+        }
+        .card__content-month{
+            margin-top:.7rem;
+        }
+    }
+}

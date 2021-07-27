@@ -1,0 +1,20 @@
+@each $name in $utils-position-list {
+    .#{$acr-position}-#{$name} {
+        position: $name;
+      }
+}
+
+@each $name in $utils-position-fixed-list {
+    .#{$acr-fixed}-#{$name} {
+        position: fixed;
+        @if ($name == 'full') {
+            top: 0;
+            bottom: 0;
+        } @else {
+            #{$name}: 0;
+        }
+        right: 0;
+        left: 0;
+        z-index: $utils-position-fixed-z-index;
+    }
+}

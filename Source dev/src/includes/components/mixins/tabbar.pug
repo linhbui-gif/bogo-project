@@ -1,0 +1,105 @@
+
+mixin _renderTabbarMenu(data)
+    //- data 
+            class: class bao boc khoi co chua button
+            id: id
+            itemList: {} -> dinh nghia cho  component itemList
+    if data
+        div(class=`${data.class ? data.class: ''}` id=data.id)
+            +renderItemList(data.itemList)
+
+mixin _renderTabbarContent(data)
+    //- data attribute
+            class: class bao boc khoi co chua noi dung
+            id: id
+            content: {} -> dinh nghia cho  component content
+    if data
+        each item in data
+            div(class=`${item.class ? item.class: ''}` id=item.id)
+                if item.content 
+                    +renderContent(item.content)
+                if item.text
+                    each text in item.text
+                        +renderText(text)
+
+mixin renderTabbar(data) 
+    //- data attribute
+            class: class bao boc khoi bao boc cua tabbar
+            isVertical: true/false --> sap xep theo chieu doc hay ngang
+            tabbarMenuBlock: {} --> dinh nghia cho  khoi chua menu
+            tabbarContentBlock: [] --> dinh nghia cho  khoi chua noi dung --> list
+        
+    div(class=`tabbar d-flex flex-wrap ${data.isVertical ? '': 'flex-column'} ${data.class ? data.class : ''}`)
+        if data.tabbarMenuBlock
+            +_renderTabbarMenu(data.tabbarMenuBlock)
+        if data.tabbarContentBlock
+            +_renderTabbarContent(data.tabbarContentBlock)
+
+//- sample
+
+
+//- div.w-50
+//- +renderTabbar({
+//-     class: 'border  p-4',
+//-     tabbarMenuBlock: {
+//-                     class: '',
+                    
+//-                     itemList: {
+//-                         class:"d-flex flex-wrap",
+//-                         items:[{class:"", button: {  class: 'w-100 hover-bg-blue hover-text-white ', dataToggle: 'tabbar__collapse', dataTarget: '#tab1',  text: {text: 'item1'}}},
+//-                             {class:"", button: {  class: 'w-100 hover-bg-blue hover-text-white active', dataToggle: 'tabbar__collapse', dataTarget: '#tab2', text: {text: 'item2'}}},
+//-                             {class:"", button: {  class: 'w-100 hover-bg-blue hover-text-white ', dataToggle: 'tabbar__collapse', dataTarget: '#tab3', text: {text: 'item3'}}},
+//-                             {class:"", button: {  class: 'w-100 hover-bg-blue hover-text-white ', dataToggle: 'tabbar__collapse', dataTarget: '#tab4', text: {text: 'item4'}}}
+//-                             ]
+//-                     }
+//-                 },
+//-     tabbarContentBlock: [
+//-         {
+//-             content: {
+//-                     id: 'tab1',
+//-                     class: 'w-100 bg-gray tabbar__collapse',
+//-                     items: [
+//-                                 [
+//-                                     {type: 'text', colClass: 'w-100 p-6 border', values: {text: 'Tab Content1', class: '', type: 'desc'}}, 
+//-                                 ]
+//-                             ]
+//-                 }
+//-         },
+//-         {
+//-             content: {
+//-                     id: 'tab2',
+//-                     class: 'w-100 tabbar__collapse show',
+//-                     items: [
+//-                                 [
+//-                                     {type: 'text', colClass: 'w-100 p-6 border', values: {text: 'Tab Content2', class: '', type: 'desc'}}, 
+//-                                 ]
+//-                             ]
+//-                 }
+//-         },
+//-         {
+//-             content: {
+//-                     id: 'tab3',
+//-                     class: 'w-100 bg-gray tabbar__collapse',
+//-                     items: [
+//-                                 [
+//-                                     {type: 'text', colClass: 'w-100 p-6 border', values: {text: 'Tab Content3', class: '', type: 'desc'}}, 
+//-                                 ]
+//-                             ]
+//-                 }
+//-         },
+//-         {
+//-             content: {
+//-                     id: 'tab4',
+//-                     class: 'w-100 tabbar__collapse',
+//-                     items: [
+//-                                 [
+//-                                     {type: 'text', colClass: 'w-100 p-6 border', values: {text: 'Tab Content4', class: '', type: 'desc'}}, 
+//-                                 ]
+//-                             ]
+//-                 }
+//-         },
+//-     ]
+//- })
+//- br
+//- br
+

@@ -1,0 +1,27 @@
+//example : @include center(absolute)
+
+@mixin positionControl($position, $top, $left, $bottom, $right) {
+    position: $position;
+    @if ($top != -1) {
+        top: $top;
+    }
+    @if ($left != -1) {
+        left: $left;
+    }
+    @if ($bottom != -1) {
+        bottom: $bottom;
+    }
+    @if ($right != -1) {
+        right: $right;
+    }
+}
+
+@mixin mid($flex: false) {
+    @if ($flex == true) {
+        @include flexControl(row, center, center);
+    }
+    @else {
+        @include positionControl(absolute, 50%, 50%, -1, -1);
+        transform: translate(-50%, -50%);;
+    }
+}

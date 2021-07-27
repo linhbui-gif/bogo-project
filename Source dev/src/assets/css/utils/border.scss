@@ -1,0 +1,45 @@
+// border
+@each $edge in $utils-border-edges {
+    @if ($edge == '') {
+        .#{$acr-border} {
+            border: 1px solid $gray ;
+          }
+        .#{$acr-border}-0 {
+            border: 0 ;
+          }
+        .#{$acr-border}-none {
+            border: none ;
+          }
+        .#{$acr-border}-unset {
+            border: unset ;
+          }
+    } @else {
+        .#{$acr-border}-#{$edge} {
+            border-#{$edge}: 1px solid $gray ;
+          }
+        .#{$acr-border}-#{$edge}-0 {
+            border-#{$edge}: 0 ;
+          }
+    }
+}
+.outline-none {
+    outline: none;
+}
+// border color
+@each $name, $color in $utils-color-mapping {
+    .#{$acr-border}-#{$name} {
+        border-color: $color ;
+        }
+}
+// boder-radius 
+@each $name, $value in $utils-border-radius {
+    @if ($name == '') {
+        .#{$acr-rounded} {
+        border-radius: $utils-default-radius ;
+        }
+    } @else {
+        .#{$acr-rounded}-#{$name} {
+            border-radius: $value ;
+          }
+    }
+}

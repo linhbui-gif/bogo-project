@@ -1,0 +1,13 @@
+.howWeWork {
+  position: relative;
+  padding-block: 8.5rem;
+  background-image: url("https://fidex.com.ua/monster/kanter/demos/img/bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:before {
+    content: "";
+    @include positionControl(absolute, 0, 0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+}

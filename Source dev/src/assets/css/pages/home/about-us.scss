@@ -1,0 +1,21 @@
+.aboutus {
+  position: relative;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  .container {
+    .aboutus__wrapper {
+      &-heading {
+        margin-bottom: 7rem;
+      }
+      &-content {
+        margin: 0;
+        .content__item {
+          .card__content-icon {
+            font-size: 7.2rem;
+          }
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+mixin renderContent(data)
+    //- data
+            class: dinh nghia class cua khoi content
+            id: dinh nghia id cua khoi content
+            items: dinh nghia noi dung theo hang va cot
+                [ 
+                    [                       --> hang 1
+                        [                   --> cot 1 
+                            colClass: '',   --> class cua cot 1
+                            type: '',       --> type cua cot 1,  co the the cac component khac vao day
+                            values: {}      --> thuoc tinh cua component
+                        ], 
+                        ...
+                    ],
+                    ...      
+                ]
+    if data
+        div(class=`${data.class ? data.class : ''}`  
+            id=data.id)
+            if data.items
+                each row in data.items
+                    div.d-flex.justify-content-start.flex-wrap
+                        each column in row 
+                            div(class=`${column.colClass ? column.colClass: ''}`)
+                                if column.type
+                                    -let count = 0;
+                                    -var duplicate_number = 1;
+                                    if column.duplicate
+                                        -var duplicate_number = column.duplicate;
+                                    while count < duplicate_number
+                                        -count++;
+                                        case column.type
+                                            when 'button'
+                                                +renderButton(column.values)
+                                            when 'input'
+                                                +renderInput(column.values)
+                                            when 'iconImage'
+                                                +renderIconImage(column.values)
+                                            when 'checkbox'
+                                                +renderCheckbox(column.values)
+                                            when 'select'
+                                                +renderSelect(column.values)
+                                            when 'itemList'
+                                                +renderItemList(column.values)
+                                            when 'text'
+                                                +renderText(column.values)
+                                    
+        
+        

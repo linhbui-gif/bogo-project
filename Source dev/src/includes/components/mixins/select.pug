@@ -1,0 +1,52 @@
+
+mixin renderSelect(data)
+    //- data
+            class: class cua khoi select
+            placeholder: placeholder select
+            id: id  select
+            value: value select
+            disabled: disabled
+            options: [
+                {
+                    class: class cua the option
+                    value: value cua the option
+                    text: noi dung cua the option
+                    selected: the option duoc chon
+                },
+                ...
+
+            ]
+        
+    if data.label
+        +renderText(data.label)
+    select(class=`p-2 border ${data.class ? data.class: ''}` 
+            id=data.id
+            name=data.name
+            value=data.value
+            placeholder=data.placeholder
+            disabled=data.disabled)
+        each option in data.options
+            option(selected=option.selected class=` ${data.class ? data.class: ''}`
+                    value=`${option.value ? option.value : ''}` )= option.text
+
+
+//- sample
+
+
+//- br
+//- -
+//-     var listData = [{id:'test1', 
+//-                     class:'w-25 p-3 rounded-2 mb-1', 
+//-                     options: [
+//-                             {value: '1', selected:true, text:'text1'}, 
+//-                             {value: '2', text:'text2'}]
+//-                     },
+//-                     { id:'disable', 
+//-                     disabled: true, 
+//-                     class:'w-25 text-red p-3 rounded-2  mb-1', 
+//-                     options:[
+//-                             {value: '1', text:'text1'}, 
+//-                             {value: '2', text:'disable', selected:true}]}]
+//- each data in listData
+//-     +renderSelect(data)
+//-     br
